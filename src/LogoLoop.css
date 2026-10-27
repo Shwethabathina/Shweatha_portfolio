@@ -1,0 +1,112 @@
+/* New Skills-only styles. No global Hero, About, navbar, or galaxy overrides. */
+.skills .skillsLoopHeading {
+  text-align: center;
+  padding-top: clamp(36px, 6vw, 72px);
+}
+.skills .skillsEyebrow {
+  display: inline-block;
+  color: #bea3fa;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+}
+.skills .skillsLoopHeading h2 {
+  margin: 15px 0 12px;
+  font-size: clamp(38px, 4.5vw, 64px);
+  letter-spacing: -.055em;
+}
+.skills .skillsLoopHeading p {
+  margin: 0;
+  color: #c4bad8;
+  font-size: clamp(13px, 1.3vw, 16px);
+  line-height: 1.7;
+}
+.techLoopSection {
+  width: 100%;
+  margin: clamp(36px, 5.5vw, 75px) auto 0;
+}
+.techLoopFrame {
+  overflow: hidden;
+  width: 100%;
+  padding: 18px 0 22px;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.techLoopTrack {
+  display: flex;
+  width: max-content;
+  animation: techLogoTravel 48s linear infinite;
+  will-change: transform;
+}
+.techLoopFrame:hover .techLoopTrack,
+.techLoopFrame:focus-within .techLoopTrack {
+  animation-play-state: paused;
+}
+.techLoopGroup {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  gap: clamp(32px, 4vw, 56px);
+  padding-right: clamp(32px, 4vw, 56px);
+}
+.techLoopItem {
+  display: flex;
+  flex: 0 0 auto;
+  width: 92px;
+  min-height: 110px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #c9c1d7;
+  transition: transform .24s ease, color .24s ease;
+}
+.techLoopItem img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  opacity: .94;
+  filter: drop-shadow(0 6px 12px rgba(5, 2, 13, .25));
+  transition: opacity .24s ease, filter .24s ease;
+}
+.techLoopItem span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+.techLoopItem:hover {
+  color: #fff;
+  transform: translateY(-6px);
+}
+.techLoopItem:hover img {
+  opacity: 1;
+  filter: drop-shadow(0 0 15px rgba(186, 147, 255, .42));
+}
+.techLoopFootnote {
+  margin: 27px 0 0;
+  color: #b8a9d4;
+  font-size: 13px;
+  letter-spacing: .02em;
+  text-align: center;
+}
+@keyframes techLogoTravel {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 700px) {
+  .techLoopItem { width: 74px; min-height: 95px; gap: 12px; }
+  .techLoopItem img { width: 45px; height: 45px; }
+  .techLoopItem span { font-size: 10px; }
+  .techLoopGroup { gap: 25px; padding-right: 25px; }
+  .techLoopTrack { animation-duration: 38s; }
+  .techLoopFootnote { margin-top: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .techLoopTrack { animation: none; }
+  .techLoopItem { transition: none; }
+}

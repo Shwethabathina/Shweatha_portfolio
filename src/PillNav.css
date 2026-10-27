@@ -1,0 +1,26 @@
+/* Pill Nav — refined glass-compatible lavender fill and centered rolling labels. */
+.pill-nav { position: relative; min-width: 0; --pill-ink: #e9defb; --pill-fill: #c6a4ff; }
+.pill-nav-list { position: relative; display: flex; align-items: center; justify-content: center; gap: 4px; width: max-content; max-width: 100%; padding-bottom: 12px; }
+.pill-nav-link { appearance: none; position: relative; isolation: isolate; display: inline-flex; justify-content: center; align-items: center; flex: 0 0 auto; padding: 10px 11px; min-height: 37px; border: 1px solid transparent; border-radius: 999px; background: transparent; color: var(--pill-ink); cursor: pointer; text-decoration: none; font-size: 15px; font-weight: 600; line-height: 1.12; white-space: nowrap; overflow: hidden; transition: border-color .25s ease, color .28s ease; }
+.pill-nav-link.is-active { border-color: rgba(190,157,255,.4); color: #f9f4ff; }
+.pill-nav-link:hover, .pill-nav-link:focus-visible { border-color: rgba(195,165,251,.48); }
+.pill-nav-fill { position: absolute; z-index: -1; inset: 0; border-radius: inherit; background: linear-gradient(135deg,#dac0ff,#b591f4); transform: translateY(103%); transition: transform 430ms cubic-bezier(.23,1,.32,1); pointer-events: none; }
+.pill-nav-link:is(:hover,:focus-visible) .pill-nav-fill { transform: translateY(0); }
+.pill-nav-label { position: relative; display: block; height: 1.2em; overflow: hidden; }
+.pill-nav-label-normal, .pill-nav-label-roll { display: block; line-height: 1.2em; transition: transform 430ms cubic-bezier(.23,1,.32,1); }
+.pill-nav-label-normal { transform: translateY(0); }
+.pill-nav-label-roll { color:#1c102b; transform: translateY(0); }
+.pill-nav-link:is(:hover,:focus-visible) .pill-nav-label-normal,
+.pill-nav-link:is(:hover,:focus-visible) .pill-nav-label-roll { transform: translateY(-100%); }
+.pill-nav-sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+@media (max-width:900px) { .pill-nav-list { flex-wrap: wrap; } .pill-nav-link { font-size: 13px; padding: 9px 10px; } }
+@media (prefers-reduced-motion:reduce) { .pill-nav-fill,.pill-nav-label-normal,.pill-nav-label-roll,.pill-nav-active-dot { transition:none !important; } }
+
+/* Center each label in both resting and hover states. */
+.pill-nav-link { text-align: center; }
+.pill-nav-label { width: 100%; text-align: center; }
+.pill-nav-label-normal, .pill-nav-label-roll { width: 100%; text-align: center; }
+/* Refined lavender effect: pearly translucent fill, not neon. */
+.pill-nav-fill { background: linear-gradient(158deg, rgba(211,187,249,.82), rgba(154,116,218,.72)); }
+.pill-nav-link.is-active { background: rgba(173,133,237,.095); border-color: rgba(201,173,242,.29); }
+.pill-nav-link:hover, .pill-nav-link:focus-visible { border-color: rgba(205,175,244,.34); }

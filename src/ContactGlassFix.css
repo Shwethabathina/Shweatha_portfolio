@@ -1,0 +1,51 @@
+/* Scoped glass refinements: import AFTER the existing ContactSection.css.
+   These rules affect only the existing Contact form card. */
+.contactNewSection .contactNewFormCard {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: rgba(20, 14, 39, 0.43) !important;
+  border: 1px solid rgba(226, 205, 255, 0.22) !important;
+  border-radius: 28px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 16px 50px rgba(5, 3, 20, 0.21),
+    0 0 32px rgba(172, 122, 235, 0.06);
+  backdrop-filter: blur(16px) saturate(125%);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+}
+
+.contactNewSection .contactNewFormContent {
+  position: relative;
+  z-index: 1;
+}
+
+.contactNewSection .contactNewForm input,
+.contactNewSection .contactNewForm textarea {
+  background: rgba(9, 7, 24, 0.38);
+  border-color: rgba(213, 190, 255, 0.23);
+  color: #f7f1ff;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.contactNewSection .contactNewForm input:focus,
+.contactNewSection .contactNewForm textarea:focus {
+  border-color: rgba(202, 166, 255, 0.72);
+  outline: 2px solid rgba(191, 151, 255, 0.22);
+  outline-offset: 1px;
+}
+
+.contactNewSection .contactSubmitFeedback {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.contactNewSection .contactSubmitFeedback.isError { color: #ffc2cb; }
+.contactNewSection .contactSubmitFeedback.isSuccess { color: #d8ffea; }
+
+.contactNewSection .contactNewSubmit:disabled { opacity: 0.65; cursor: wait; }
+
+@media (prefers-reduced-transparency: reduce) {
+  .contactNewSection .contactNewFormCard { background: #19112f !important; }
+}

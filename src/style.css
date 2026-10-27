@@ -1,0 +1,5381 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+
+  font-family: "DM Sans", sans-serif;
+
+  color: #f7f4ff;
+
+  background: #0a0818;
+
+}
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  margin: 0;
+
+}
+
+button,
+
+input,
+
+a {
+
+  font: inherit;
+
+}
+
+button {
+
+  cursor: pointer;
+
+}
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+button:focus-visible,
+
+a:focus-visible,
+
+input:focus-visible {
+
+  outline: 2px solid #bea5ff;
+
+  outline-offset: 3px;
+
+}
+
+/* =====================================
+
+   GALAXY UNIVERSE
+
+===================================== */
+
+.site {
+
+  position: relative;
+
+  isolation: isolate;
+
+  min-height: 100vh;
+
+  overflow: clip;
+
+  background:
+
+    radial-gradient(
+
+      ellipse 55% 45% at 7% 33%,
+
+      rgba(93, 49, 158, 0.23),
+
+      transparent 85%
+
+    ),
+
+    radial-gradient(
+
+      ellipse 55% 55% at 96% 25%,
+
+      rgba(96, 46, 158, 0.19),
+
+      transparent 80%
+
+    ),
+
+    linear-gradient(
+
+      135deg,
+
+      #080817,
+
+      #110c28 46%,
+
+      #080816 100%
+
+    );
+
+}
+
+/* Visible atmospheric structure,
+
+   without an overly bright glow. */
+
+.cosmicHaze {
+
+  position: absolute;
+
+  top: 50px;
+
+  left: 0;
+
+  right: 0;
+
+  height: 1000px;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+
+    radial-gradient(
+
+      ellipse 28% 20% at 12% 44%,
+
+      rgba(119, 67, 172, 0.21),
+
+      transparent 95%
+
+    ),
+
+    radial-gradient(
+
+      ellipse 38% 17% at 87% 52%,
+
+      rgba(99, 61, 178, 0.21),
+
+      transparent 95%
+
+    ),
+
+    radial-gradient(
+
+      ellipse 43% 14% at 55% 90%,
+
+      rgba(81, 51, 158, 0.13),
+
+      transparent 95%
+
+    );
+
+}
+
+.cosmicCloud {
+
+  position: absolute;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  filter: blur(43px);
+
+  opacity: 0.52;
+
+}
+
+.cloudOne {
+
+  width: 700px;
+
+  height: 350px;
+
+  top: 180px;
+
+  left: -260px;
+
+  background: radial-gradient(
+
+    ellipse at center,
+
+    rgba(113, 61, 183, 0.29),
+
+    rgba(87, 48, 143, 0.12) 55%,
+
+    transparent 80%
+
+  );
+
+  transform: rotate(-27deg);
+
+  animation: cloudDriftOne 32s ease-in-out infinite alternate;
+
+}
+
+.cloudTwo {
+
+  width: 800px;
+
+  height: 360px;
+
+  right: -310px;
+
+  top: 300px;
+
+  background: radial-gradient(
+
+    ellipse at center,
+
+    rgba(105, 60, 166, 0.24),
+
+    rgba(73, 40, 126, 0.11) 55%,
+
+    transparent 80%
+
+  );
+
+  transform: rotate(24deg);
+
+  animation: cloudDriftTwo 38s ease-in-out infinite alternate;
+
+}
+
+.cloudThree {
+
+  width: 760px;
+
+  height: 280px;
+
+  top: 800px;
+
+  left: 15%;
+
+  background: radial-gradient(
+
+    ellipse at center,
+
+    rgba(78, 50, 156, 0.19),
+
+    transparent 80%
+
+  );
+
+  transform: rotate(-12deg);
+
+  animation: cloudDriftOne 42s ease-in-out infinite alternate;
+
+}
+
+@keyframes cloudDriftOne {
+
+  from {
+
+    translate: -3% 0;
+
+  }
+
+  to {
+
+    translate: 5% -3%;
+
+  }
+
+}
+
+@keyframes cloudDriftTwo {
+
+  from {
+
+    translate: 3% -2%;
+
+  }
+
+  to {
+
+    translate: -6% 3%;
+
+  }
+
+}
+
+/* GALAXY VISIBILITY */
+
+.galaxyLayer {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 0;
+
+  width: 100%;
+
+  height: 1050px;
+
+  opacity: 1;
+
+  pointer-events: none;
+
+  mask-image: linear-gradient(
+
+    to bottom,
+
+    #000 0%,
+
+    #000 75%,
+
+    transparent 100%
+
+  );
+
+  -webkit-mask-image: linear-gradient(
+
+    to bottom,
+
+    #000 0%,
+
+    #000 75%,
+
+    transparent 100%
+
+  );
+
+}
+
+.navShell,
+
+main,
+
+footer {
+
+  position: relative;
+
+  z-index: 1;
+
+}
+
+/* =====================================
+
+   NAVIGATION
+
+===================================== */
+
+.navShell {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  width: calc(100% - 48px);
+
+  max-width: 1320px;
+
+  height: 68px;
+
+  margin: 20px auto 0;
+
+  padding: 0 25px;
+
+  border: 1px solid rgba(213, 188, 255, 0.13);
+
+  border-radius: 50px;
+
+  background: rgba(13, 11, 23, 0.72);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+}
+
+.logo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 800;
+
+}
+
+.logoIcon,
+
+.logo b {
+
+  color: #bca0ff;
+
+}
+
+.logoIcon {
+
+  font-size: 27px;
+
+}
+
+.logoSub {
+
+  margin-left: 7px;
+
+  color: #817b9b;
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+
+}
+
+.links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+}
+
+.links a {
+
+  color: #aaa4bd;
+
+  font-size: 13px;
+
+}
+
+.links a:hover {
+
+  color: white;
+
+}
+
+.navContact {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 11px 17px;
+
+  border-radius: 24px;
+
+  background: #e7ddff;
+
+  color: #1b1430;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+}
+
+.menuBtn {
+
+  display: none;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #f7f1ff;
+
+}
+
+/* =====================================
+
+   PAGE LAYOUT
+
+===================================== */
+
+.hero,
+
+.section,
+
+.contactBlock,
+
+footer {
+
+  max-width: 1320px;
+
+  margin: 0 auto;
+
+  padding-left: 6%;
+
+  padding-right: 6%;
+
+}
+
+.hero {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  min-height: 700px;
+
+  height: min(780px, calc(100svh - 88px));
+
+  padding-top: 38px;
+
+  padding-bottom: 35px;
+
+}
+
+.heroTop,
+
+.heroBottom,
+
+.sectionLabel {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.availability {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #cbb7ff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+}
+
+.availability i,
+
+.chatHeader i {
+
+  display: inline-block;
+
+  width: 7px;
+
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #a6ffc3;
+
+  box-shadow: 0 0 10px #a6ffc388;
+
+}
+
+.heroSide,
+
+.heroBottom,
+
+.sectionLabel,
+
+.sectionTitle > span {
+
+  color: #8c86a5;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+}
+
+.heroContent {
+
+  display: grid;
+
+  grid-template-columns:
+
+    minmax(0, 0.85fr)
+
+    minmax(0, 1.35fr);
+
+  align-items: center;
+
+  gap: clamp(35px, 5vw, 85px);
+
+  width: 100%;
+
+  margin: 35px 0;
+
+}
+
+/* =====================================
+
+   ORIGINAL MEMOJI CARD
+
+===================================== */
+
+.heroMemojiContainer {
+
+  position: relative;
+
+  isolation: isolate;
+
+  width: 100%;
+
+  max-width: 385px;
+
+  aspect-ratio: 0.88;
+
+  justify-self: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(195, 166, 244, 0.24);
+
+  border-radius: 30px;
+
+  background:
+
+    radial-gradient(
+
+      circle at 50% 36%,
+
+      rgba(104, 68, 148, 0.16),
+
+      transparent 68%
+
+    ),
+
+    rgba(11, 10, 19, 0.68);
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+
+    0 28px 80px rgba(0, 0, 0, 0.42),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+
+    0 0 45px rgba(116, 76, 179, 0.1);
+
+}
+
+.heroMemojiContainer::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border: 1px solid rgba(200, 182, 255, 0.07);
+
+  border-radius: 22px;
+
+  pointer-events: none;
+
+}
+
+.heroMemojiButton {
+
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 19px;
+
+  border: none;
+
+  border-radius: inherit;
+
+  background: transparent;
+
+  overflow: hidden;
+
+}
+
+.realMemoji {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
+
+  height: 100%;
+
+  transform-origin: center bottom;
+
+  animation: memojiFloat 4.7s ease-in-out infinite;
+
+}
+
+.realMemoji img {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  max-width: 100%;
+
+  max-height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  background: transparent;
+
+  content: normal;
+
+  filter: drop-shadow(
+
+    0 16px 25px rgba(0, 0, 0, 0.18)
+
+  );
+
+}
+
+.realMemoji.isWaving {
+
+  animation: memojiWave 0.55s ease-in-out 2 alternate;
+
+}
+
+@keyframes memojiFloat {
+
+  0%, 100% { transform: translateY(0); }
+
+  50% { transform: translateY(-10px); }
+
+}
+
+@keyframes memojiWave {
+
+  from { transform: rotate(-3deg); }
+
+  to { transform: rotate(4deg); }
+
+}
+
+/* =====================================
+
+   TEXT ANIMATIONS
+
+===================================== */
+
+.heroText {
+
+  position: relative;
+
+  z-index: 2;
+
+  min-width: 0;
+
+  width: 100%;
+
+}
+
+.heroName {
+
+  margin: 0;
+
+  max-width: 820px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: clamp(35px, 3.65vw, 61px);
+
+  font-weight: 800;
+
+  letter-spacing: -0.065em;
+
+  line-height: 1.3;
+
+}
+
+.maskedName {
+
+  color: #f8f6ff;
+
+}
+
+.maskWordWindow {
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  vertical-align: bottom;
+
+  padding: 0 0.04em 0.14em;
+
+  margin: 0 -0.04em -0.14em 0;
+
+}
+
+.maskWordReveal {
+
+  display: inline-block;
+
+  opacity: 0;
+
+  transform: translateY(105%);
+
+  animation:
+
+    maskWordEnter 0.86s cubic-bezier(0.19, 1, 0.22, 1)
+
+    forwards;
+
+}
+
+.maskWordTexture {
+
+  display: inline-block;
+
+  color: transparent;
+
+  background-image:
+
+    radial-gradient(
+
+      ellipse at 10% 30%,
+
+      #b18b5d 0%,
+
+      transparent 25%
+
+    ),
+
+    radial-gradient(
+
+      ellipse at 40% 68%,
+
+      #faf8ff 0%,
+
+      transparent 28%
+
+    ),
+
+    radial-gradient(
+
+      ellipse at 78% 20%,
+
+      #b5a1d8 0%,
+
+      transparent 30%
+
+    ),
+
+    radial-gradient(
+
+      ellipse at 85% 85%,
+
+      #77717e 0%,
+
+      transparent 35%
+
+    ),
+
+    linear-gradient(
+
+      110deg,
+
+      #bcaf9a,
+
+      #ece9f3,
+
+      #8f859b,
+
+      #fffdf7,
+
+      #b09ac6
+
+    );
+
+  background-size:
+
+    190% 190%,
+
+    175% 180%,
+
+    210% 190%,
+
+    180% 220%,
+
+    190% 100%;
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: maskedColourDrift 11s ease-in-out infinite alternate;
+
+}
+
+@keyframes maskWordEnter {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(105%);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+@keyframes maskedColourDrift {
+
+  from {
+
+    background-position:
+
+      0% 20%, 80% 80%, 40% 10%, 70% 60%, 0% 50%;
+
+  }
+
+  to {
+
+    background-position:
+
+      90% 65%, 15% 20%, 90% 75%, 15% 15%, 100% 50%;
+
+  }
+
+}
+
+.heroWelcome {
+
+  margin: 25px 0 0;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: clamp(25px, 2.6vw, 40px);
+
+  font-weight: 700;
+
+  letter-spacing: -0.052em;
+
+  line-height: 1.35;
+
+}
+
+.animatedGradientText {
+
+  display: inline-block;
+
+  background: linear-gradient(
+
+    105deg,
+
+    #f4f0ff,
+
+    #d2b8fa 20%,
+
+    #efa5e6 40%,
+
+    #c4aaff 60%,
+
+    #f7f2ff 80%,
+
+    #d2b8fa
+
+  );
+
+  background-size: 240% auto;
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation:
+
+    welcomeReveal 0.9s ease-out 0.85s both,
+
+    gradientFlow 9s linear 1.75s infinite;
+
+}
+
+@keyframes welcomeReveal {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(12px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+@keyframes gradientFlow {
+
+  from { background-position: 0% 50%; }
+
+  to { background-position: 200% 50%; }
+
+}
+
+.heroRole {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin: 19px 0 0;
+
+  color: #c6c0d4;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  opacity: 0;
+
+  animation: roleEnter 0.7s ease 1.1s forwards;
+
+}
+
+.roleDot {
+
+  color: #ae91f2;
+
+  font-size: 12px;
+
+}
+
+@keyframes roleEnter {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+.heroQuote {
+
+  margin: 24px 0 30px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: clamp(14px, 1.3vw, 17px);
+
+  font-weight: 600;
+
+  line-height: 1.75;
+
+  color: #e3deee;
+
+}
+
+.foldQuote {
+
+  display: inline;
+
+  perspective: 750px;
+
+}
+
+.foldWordWrap {
+
+  display: inline-block;
+
+  vertical-align: baseline;
+
+  perspective: 750px;
+
+}
+
+.foldWord {
+
+  display: inline-block;
+
+  transform-origin: center top;
+
+  opacity: 0;
+
+  transform:
+
+    perspective(750px) rotateX(-88deg)
+
+    translateY(-9px);
+
+  animation:
+
+    foldWordOpen 0.78s cubic-bezier(0.2, 0.8, 0.2, 1)
+
+    forwards;
+
+}
+
+@keyframes foldWordOpen {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+
+      perspective(750px) rotateX(-88deg)
+
+      translateY(-9px);
+
+  }
+
+  60% {
+
+    opacity: 1;
+
+    transform:
+
+      perspective(750px) rotateX(12deg)
+
+      translateY(1px);
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+
+      perspective(750px) rotateX(0deg)
+
+      translateY(0);
+
+  }
+
+}
+
+/* =====================================
+
+   BUTTONS
+
+===================================== */
+
+.heroButtons {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  opacity: 0;
+
+  animation: roleEnter 0.7s ease 2s forwards;
+
+}
+
+.buttonPrimary,
+
+.buttonOutline,
+
+.specularButton {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  min-height: 49px;
+
+  padding: 13px 21px;
+
+  border-radius: 28px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+}
+
+.buttonPrimary {
+
+  border: 1px solid #b6a0f7;
+
+  background: #b6a0f7;
+
+  color: #211632;
+
+}
+
+.buttonPrimary:hover {
+
+  background: #cdbdff;
+
+}
+
+.buttonOutline {
+
+  border: 1px solid rgba(180, 157, 227, 0.57);
+
+  background: rgba(12, 11, 23, 0.46);
+
+  color: #e4d9fa;
+
+  transition: 0.2s;
+
+}
+
+.buttonOutline:hover {
+
+  border-color: #c6afff;
+
+  background: rgba(128, 94, 188, 0.13);
+
+  transform: translateY(-2px);
+
+}
+
+.assistantHeroButton {
+
+  white-space: nowrap;
+
+}
+
+.specularButton {
+
+  --light-x: 50%;
+
+  --light-y: 50%;
+
+  position: relative;
+
+  isolation: isolate;
+
+  overflow: hidden;
+
+  border: 1px solid #bf9bf7;
+
+  color: #20142e;
+
+  background: linear-gradient(
+
+    115deg, #c5a0fc, #b7a3fa, #d2aeff
+
+  );
+
+  box-shadow:
+
+    0 5px 25px rgba(147, 91, 223, 0.18),
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+
+  transition: 0.22s ease;
+
+}
+
+.specularButton:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 36px rgba(167, 113, 226, 0.29);
+
+}
+
+.specularShine {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background: radial-gradient(
+
+    circle 120px at
+
+    var(--light-x) var(--light-y),
+
+    rgba(255, 255, 255, 0.64),
+
+    rgba(255, 255, 255, 0.12) 55%,
+
+    transparent
+
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.2s;
+
+  pointer-events: none;
+
+}
+
+.specularButton:hover .specularShine {
+
+  opacity: 1;
+
+}
+
+.specularContent {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  white-space: nowrap;
+
+}
+
+.statusNotice {
+
+  max-width: 500px;
+
+  margin-top: 20px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #756293;
+
+  border-radius: 12px;
+
+  background: #241a37;
+
+  color: #e1d2fa;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+}
+
+.heroBottom a {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+.heroBottom a:hover {
+
+  color: #c6b2ff;
+
+}
+
+/* =====================================
+
+   ABOUT
+
+===================================== */
+
+.section {
+
+  padding-top: 110px;
+
+  padding-bottom: 120px;
+
+  border-top: 1px solid #ffffff18;
+
+}
+
+.sectionLabel span:first-child {
+
+  color: #b5a5ff;
+
+}
+
+.section h2,
+
+.contactBlock h2 {
+
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: clamp(48px, 6vw, 80px);
+
+  font-weight: 800;
+
+  letter-spacing: -0.075em;
+
+  line-height: 1.1;
+
+}
+
+.section h2 em,
+
+.contactBlock h2 em {
+
+  font-style: normal;
+
+  background: linear-gradient(110deg, #a796ff, #e2bafa);
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+
+}
+
+.aboutGrid {
+
+  display: grid;
+
+  grid-template-columns: 1.2fr 1fr;
+
+  gap: 70px;
+
+  margin-top: 70px;
+
+}
+
+.aboutGrid p {
+
+  margin: 0 0 18px;
+
+  color: #e3dfed;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+}
+
+.aboutGrid p.muted {
+
+  color: #9793af;
+
+  font-size: 14px;
+
+}
+
+.textLink {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 18px;
+
+  color: #c9b7ff;
+
+  font-size: 13px;
+
+}
+
+/* =====================================
+
+   PROJECTS
+
+===================================== */
+
+.sectionTitle {
+
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin: 70px 0 40px;
+
+}
+
+.projectGrid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+}
+
+.projectCard {
+
+  min-height: 435px;
+
+  overflow: hidden;
+
+  border: 1px solid #373249;
+
+  border-radius: 21px;
+
+  background: #131425;
+
+  transition: 0.25s;
+
+}
+
+.projectCard:hover {
+
+  transform: translateY(-5px);
+
+  border-color: #8b73c7;
+
+}
+
+.cardHead {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 23px 22px 0;
+
+  color: #c1b0ff;
+
+  font-size: 10px;
+
+  letter-spacing: 1.4px;
+
+}
+
+.cardHead span:last-child {
+
+  color: #807a94;
+
+}
+
+.projectVisual {
+
+  display: grid;
+
+  place-items: center;
+
+  height: 200px;
+
+}
+
+.projectVisual.research {
+
+  background: radial-gradient(
+
+    ellipse at center, #493389, transparent 65%
+
+  );
+
+}
+
+.projectVisual.ai {
+
+  background: radial-gradient(
+
+    ellipse at center, #633768, transparent 65%
+
+  );
+
+}
+
+.projectVisual.web {
+
+  background: radial-gradient(
+
+    ellipse at center, #22516d, transparent 65%
+
+  );
+
+}
+
+.visualCore {
+
+  color: #e1d5ff;
+
+  font-size: 85px;
+
+  filter: drop-shadow(0 0 20px #9e87d8);
+
+}
+
+.cardBottom {
+
+  padding: 14px 23px 25px;
+
+}
+
+.cardBottom h3 {
+
+  margin: 0 0 10px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+}
+
+.cardBottom p {
+
+  min-height: 65px;
+
+  color: #aaa4bb;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+
+}
+
+.chips {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 18px;
+
+}
+
+.chips span {
+
+  padding: 7px 10px;
+
+  border: 1px solid #55506b;
+
+  border-radius: 20px;
+
+  color: #cfc4e5;
+
+  font-size: 10px;
+
+}
+
+/* =====================================
+
+   SKILLS
+
+===================================== */
+
+.skills h2 {
+
+  margin: 70px 0 50px;
+
+}
+
+.skillCloud {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+}
+
+.skill {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 17px 25px;
+
+  border: 1px solid #4c4560;
+
+  border-radius: 50px;
+
+  background: #151322;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 16px;
+
+}
+
+.skillSpark {
+
+  color: #ab97ff;
+
+}
+
+/* =====================================
+
+   CONTACT
+
+===================================== */
+
+.contactBlock {
+
+  padding-top: 110px;
+
+  padding-bottom: 120px;
+
+  text-align: center;
+
+  background: radial-gradient(
+
+    ellipse at center, #32214b55, transparent 68%
+
+  );
+
+}
+
+.sectionLabelContact {
+
+  color: #cbb9ff;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+}
+
+.contactBlock h2 {
+
+  margin: 30px 0;
+
+}
+
+.contactBlock p {
+
+  margin-bottom: 30px;
+
+  color: #aaa8b9;
+
+}
+
+.socials {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 22px;
+
+  margin-top: 60px;
+
+}
+
+.socials a {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #c1b9d5;
+
+  font-size: 13px;
+
+}
+
+/* =====================================
+
+   FOOTER
+
+===================================== */
+
+footer {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 28px;
+
+  padding-bottom: 30px;
+
+  border-top: 1px solid #ffffff18;
+
+  color: #89849f;
+
+  font-size: 12px;
+
+}
+
+/* =====================================
+
+   GEMINI CHAT
+
+===================================== */
+
+.buddyDock {
+
+  position: fixed;
+
+  right: 24px;
+
+  bottom: 22px;
+
+  z-index: 20;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 12px;
+
+  pointer-events: none;
+
+}
+
+.buddyPopover,
+
+.buddyRow {
+
+  pointer-events: auto;
+
+}
+
+.buddyRow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+.muteBtn,
+
+.chatLaunchButton {
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid #8774bd;
+
+  border-radius: 50%;
+
+  background: #2b2049;
+
+  color: #eee7ff;
+
+}
+
+.muteBtn {
+
+  width: 36px;
+
+  height: 36px;
+
+}
+
+.chatLaunchButton {
+
+  width: 57px;
+
+  height: 57px;
+
+  background: linear-gradient(
+
+    135deg, #9d79ee, #6e42c4
+
+  );
+
+  box-shadow: 0 5px 32px #8051ce70;
+
+}
+
+.buddyPopover {
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: min(370px, calc(100vw - 30px));
+
+  height: min(480px, 75vh);
+
+  overflow: hidden;
+
+  border: 1px solid #594778;
+
+  border-radius: 20px;
+
+  background: #171527;
+
+  box-shadow: 0 28px 85px #000a;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(15px);
+
+  transition: 0.2s;
+
+}
+
+.buddyPopover.show {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: none;
+
+}
+
+.chatHeader {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 15px;
+
+  border-bottom: 1px solid #ffffff1a;
+
+}
+
+.chatAvatar {
+
+  display: grid;
+
+  place-items: center;
+
+  width: 38px;
+
+  height: 38px;
+
+  border-radius: 12px;
+
+  background: #7352b4;
+
+}
+
+.chatHeader strong {
+
+  display: block;
+
+  font-size: 13px;
+
+}
+
+.chatHeader span {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 5px;
+
+  color: #b0a5ca;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+}
+
+.iconButton {
+
+  margin-left: auto;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #ded6ef;
+
+}
+
+.chatMessages {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 15px;
+
+}
+
+.bubble {
+
+  max-width: 95%;
+
+  padding: 12px 14px;
+
+  border-radius: 15px;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+
+  white-space: pre-wrap;
+
+  overflow-wrap: anywhere;
+
+}
+
+.bubble.assistant {
+
+  align-self: flex-start;
+
+  border-bottom-left-radius: 3px;
+
+  background: #302742;
+
+  color: #eee6fc;
+
+}
+
+.bubble.user {
+
+  align-self: flex-end;
+
+  border-bottom-right-radius: 3px;
+
+  background: #b19bf5;
+
+  color: #211430;
+
+}
+
+.loadingBubble {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+.loadingBubble svg {
+
+  animation: spin 1s linear infinite;
+
+}
+
+@keyframes spin {
+
+  to { transform: rotate(360deg); }
+
+}
+
+.quickReplies {
+
+  display: flex;
+
+  gap: 6px;
+
+  overflow-x: auto;
+
+  padding: 5px 12px 12px;
+
+}
+
+.quickReplies button {
+
+  padding: 8px 10px;
+
+  border: 1px solid #65547d;
+
+  border-radius: 25px;
+
+  background: transparent;
+
+  color: #ddccff;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+
+}
+
+.quickReplies button:disabled,
+
+.chatForm button:disabled {
+
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+}
+
+.chatForm {
+
+  display: flex;
+
+  gap: 9px;
+
+  padding: 11px;
+
+  border-top: 1px solid #ffffff19;
+
+}
+
+.chatForm input {
+
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 12px;
+
+  border: 1px solid #574c6d;
+
+  border-radius: 12px;
+
+  background: #282238;
+
+  color: white;
+
+  font-size: 12px;
+
+}
+
+.chatForm button {
+
+  min-width: 42px;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  background: #b6a3f6;
+
+  color: #241638;
+
+}
+
+/* =====================================
+
+   RESPONSIVE
+
+===================================== */
+
+@media (max-width: 1100px) {
+
+  .heroContent {
+
+    grid-template-columns:
+
+      minmax(0, 0.8fr)
+
+      minmax(0, 1.25fr);
+
+    gap: 36px;
+
+  }
+
+  .heroMemojiContainer {
+
+    max-width: 315px;
+
+  }
+
+  .heroName {
+
+    font-size: clamp(33px, 3.7vw, 53px);
+
+  }
+
+  .heroWelcome {
+
+    font-size: clamp(25px, 2.9vw, 37px);
+
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .links { gap: 16px; }
+
+  .heroContent { gap: 24px; }
+
+  .heroButtons { gap: 10px; }
+
+  .specularButton,
+
+  .assistantHeroButton {
+
+    font-size: 12px;
+
+    padding: 12px 15px;
+
+  }
+
+  .projectGrid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  }
+
+  .projectCard:last-child {
+
+    grid-column: span 2;
+
+  }
+
+  .aboutGrid { gap: 35px; }
+
+}
+
+@media (max-width: 700px) {
+
+  .navShell {
+
+    width: calc(100% - 24px);
+
+    height: 68px;
+
+    margin-top: 12px;
+
+    padding: 0 17px;
+
+  }
+
+  .logoSub,
+
+  .navContact,
+
+  .heroSide,
+
+  .heroBottom > span {
+
+    display: none;
+
+  }
+
+  .menuBtn { display: block; }
+
+  .links {
+
+    display: none;
+
+    position: absolute;
+
+    top: 75px;
+
+    left: 2%;
+
+    right: 2%;
+
+    z-index: 30;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 20px;
+
+    padding: 24px;
+
+    border: 1px solid #514765;
+
+    border-radius: 17px;
+
+    background: rgba(17, 13, 30, 0.98);
+
+  }
+
+  .links.open { display: flex; }
+
+  .hero {
+
+    min-height: auto;
+
+    height: auto;
+
+    padding-top: 27px;
+
+    padding-bottom: 35px;
+
+  }
+
+  .heroContent {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+    margin: 35px 0 45px;
+
+  }
+
+  .heroMemojiContainer {
+
+    order: 2;
+
+    width: min(310px, 85vw);
+
+    max-width: none;
+
+    margin: 0 auto;
+
+  }
+
+  .heroText {
+
+    order: 1;
+
+    width: 100%;
+
+  }
+
+  .heroName {
+
+    font-size: clamp(32px, 8vw, 48px);
+
+    line-height: 1.33;
+
+  }
+
+  .heroWelcome {
+
+    margin-top: 25px;
+
+    font-size: clamp(25px, 6.4vw, 35px);
+
+  }
+
+  .heroRole { font-size: 12px; }
+
+  .heroQuote {
+
+    margin-bottom: 28px;
+
+    font-size: 14px;
+
+  }
+
+  .heroButtons { gap: 11px; }
+
+  .specularButton,
+
+  .assistantHeroButton {
+
+    min-height: 46px;
+
+  }
+
+  .heroBottom { margin-top: 8px; }
+
+  .section {
+
+    padding-top: 70px;
+
+    padding-bottom: 75px;
+
+  }
+
+  .sectionLabel span:last-child {
+
+    display: none;
+
+  }
+
+  .section h2,
+
+  .contactBlock h2 {
+
+    font-size: 46px;
+
+  }
+
+  .aboutGrid {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    margin-top: 45px;
+
+  }
+
+  .aboutGrid p { font-size: 16px; }
+
+  .sectionTitle { margin: 50px 0 30px; }
+
+  .sectionTitle > span { display: none; }
+
+  .projectGrid { grid-template-columns: 1fr; }
+
+  .projectCard:last-child { grid-column: auto; }
+
+  .skill {
+
+    padding: 13px 18px;
+
+    font-size: 14px;
+
+  }
+
+  .contactBlock {
+
+    padding-top: 80px;
+
+    padding-bottom: 90px;
+
+  }
+
+  footer {
+
+    flex-direction: column;
+
+    padding-bottom: 110px;
+
+  }
+
+  .buddyDock {
+
+    right: 15px;
+
+    bottom: 15px;
+
+  }
+
+  .galaxyLayer {
+
+    height: 900px;
+
+    opacity: 0.9;
+
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html { scroll-behavior: auto; }
+
+  .cosmicCloud,
+
+  .realMemoji,
+
+  .realMemoji.isWaving,
+
+  .loadingBubble svg,
+
+  .maskWordReveal,
+
+  .maskWordTexture,
+
+  .animatedGradientText,
+
+  .heroRole,
+
+  .foldWord,
+
+  .heroButtons {
+
+    animation: none !important;
+
+    opacity: 1 !important;
+
+    transform: none !important;
+
+  }
+
+  * {
+
+    transition-duration: 0s !important;
+
+  }
+
+}
+
+/* =====================================================
+
+   CINEMATIC NEBULA OVERRIDE
+
+   Keeps the existing portfolio, Memoji and assistant UI.
+
+===================================================== */
+
+.site {
+
+  background: #08051d;
+
+}
+
+/* Disable the old blurry CSS patches; the nebula is now a real texture. */
+
+.cosmicHaze, .cosmicCloud {
+
+  display: none;
+
+}
+
+.galaxyLayer {
+
+  position: absolute;
+
+  inset: 0 0 auto;
+
+  width: 100%;
+
+  height: min(1100px, 115vh);
+
+  min-height: 800px;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  opacity: 1;
+
+  pointer-events: none;
+
+  isolation: isolate;
+
+  mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 100%);
+
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 100%);
+
+}
+
+.nebulaImage {
+
+  position: absolute;
+
+  inset: -5%;
+
+  background-image: url('/galaxy-nebula.webp');
+
+  background-position: center 44%;
+
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+  filter: saturate(1.14) contrast(1.07);
+
+  animation: nebulaBreathing 34s ease-in-out infinite alternate;
+
+  will-change: transform;
+
+}
+
+/* Keep the bright image readable under white portfolio text. */
+
+.nebulaVeil {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(90deg, rgba(6, 4, 22, .32), rgba(8, 5, 25, .49) 50%, rgba(7, 4, 20, .48)),
+
+    linear-gradient(180deg, rgba(6, 3, 19, .10), rgba(8, 5, 24, .16) 65%, #08051d 100%);
+
+}
+
+/* SVG-like optical glow using pure CSS rather than plain dots. */
+
+.brightStar {
+
+  position: absolute;
+
+  width: var(--star-size);
+
+  height: var(--star-size);
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+
+    0 0 5px 2px #fff,
+
+    0 0 15px 5px rgba(182, 170, 255, .85),
+
+    0 0 35px 11px rgba(116, 98, 255, .36);
+
+  animation: starPulse 5.2s ease-in-out var(--star-delay) infinite alternate;
+
+}
+
+.brightStar::before, .brightStar::after {
+
+  content: '';
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(ellipse, rgba(255,255,255,.95), rgba(190,184,255,.5) 25%, transparent 72%);
+
+  filter: blur(.4px);
+
+}
+
+.brightStar::before { width: 2px; height: calc(var(--star-size) * 9); }
+
+.brightStar::after { width: calc(var(--star-size) * 9); height: 2px; }
+
+.starDust {
+
+  position: absolute;
+
+  inset: 0;
+
+  background-repeat: repeat;
+
+  opacity: .48;
+
+}
+
+.starDustNear {
+
+  background-image:
+
+    radial-gradient(1.3px 1.3px at 20px 40px, white 97%, transparent),
+
+    radial-gradient(1px 1px at 126px 96px, #d8d0ff 97%, transparent),
+
+    radial-gradient(1.6px 1.6px at 185px 170px, #eae7ff 97%, transparent);
+
+  background-size: 242px 224px;
+
+  animation: dustDrift 55s linear infinite alternate;
+
+}
+
+.starDustFar {
+
+  background-image:
+
+    radial-gradient(.9px .9px at 75px 25px, #fff 97%, transparent),
+
+    radial-gradient(1px 1px at 173px 116px, #cdbaff 97%, transparent);
+
+  background-size: 205px 180px;
+
+  opacity: .35;
+
+  animation: dustDrift 85s linear infinite alternate-reverse;
+
+}
+
+@keyframes nebulaBreathing {
+
+  from { transform: scale(1) translate3d(-.5%, 0, 0); }
+
+  to   { transform: scale(1.08) translate3d(1%, -.6%, 0); }
+
+}
+
+@keyframes starPulse {
+
+  from { opacity: .47; filter: brightness(.85); }
+
+  to   { opacity: 1; filter: brightness(1.35); }
+
+}
+
+@keyframes dustDrift {
+
+  to { transform: translate3d(13px, -18px, 0); }
+
+}
+
+@media (max-width: 700px) {
+
+  .galaxyLayer { height: 950px; min-height: 0; }
+
+  .nebulaImage { background-position: 48% center; }
+
+  .nebulaVeil { background: linear-gradient(180deg, rgba(6,3,19,.33), rgba(8,5,24,.52) 62%, #08051d); }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nebulaImage, .starDust, .brightStar { animation: none !important; }
+
+}
+
+/* FINAL HERO TAGLINE — clean, lower, and readable without a box */
+
+.heroQuote {
+
+  position: relative;
+
+  display: block;
+
+  width: fit-content;
+
+  max-width: 100%;
+
+  margin: 46px 0 25px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  backdrop-filter: none;
+
+  -webkit-backdrop-filter: none;
+
+  color: #ded0f5;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: clamp(14px, 1.2vw, 16px);
+
+  font-weight: 500;
+
+  letter-spacing: 0.015em;
+
+  line-height: 1.75;
+
+  text-shadow: 0 1px 8px rgba(5, 3, 20, .6);
+
+  animation: taglineAppear .9s ease 1.5s both;
+
+}
+
+.quoteSpark { color: #cfb1ff; margin-left: .25em; }
+
+@keyframes taglineAppear {
+
+  from { opacity: 0; transform: translateY(10px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+@media (max-width: 700px) {
+
+  .heroQuote { margin-top: 34px; margin-bottom: 26px; font-size: 14px; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .heroQuote { animation: none; }
+
+}
+
+/* ==================================================
+
+   PURPLE ELECTRIC BORDER — MEMOJI CARD
+
+   No change to the Memoji images or click behavior.
+
+   ================================================== */
+
+.electricMemojiShell {
+
+  position: relative;
+
+  isolation: isolate;
+
+  width: 100%;
+
+  max-width: 335px;
+
+  aspect-ratio: 0.88;
+
+  justify-self: center;
+
+  border-radius: 30px;
+
+  filter: drop-shadow(0 0 15px rgba(165, 100, 255, .33));
+
+  animation: electricMemojiFloat 5.6s ease-in-out infinite;
+
+}
+
+.electricMemojiShell .heroMemojiContainer {
+
+  width: 100%;
+
+  height: 100%;
+
+  max-width: none;
+
+  aspect-ratio: auto;
+
+  border: 1px solid rgba(209, 171, 255, .29);
+
+  background:
+
+    radial-gradient(ellipse at 50% 28%, rgba(113, 58, 196, .26), transparent 70%),
+
+    rgba(12, 8, 28, .83);
+
+}
+
+.electricMemojiSvg {
+
+  position: absolute;
+
+  z-index: 3;
+
+  inset: -3px;
+
+  width: calc(100% + 6px);
+
+  height: calc(100% + 6px);
+
+  overflow: visible;
+
+  pointer-events: none;
+
+}
+
+.electricMemojiSvg rect {
+
+  fill: none;
+
+  vector-effect: non-scaling-stroke;
+
+}
+
+.electricMemojiGlow {
+
+  stroke: #a66cff;
+
+  stroke-width: 6;
+
+  opacity: .7;
+
+  filter: blur(6px);
+
+  animation: electricGlowPulse 2.7s ease-in-out infinite alternate;
+
+}
+
+.electricMemojiArc {
+
+  stroke: #a879ff;
+
+  stroke-width: 2.1;
+
+  filter: url(#memojiElectricDistortion) drop-shadow(0 0 5px #9147ff);
+
+  stroke-dasharray: 90 35 210 55;
+
+  animation: electricArcTravel 9s linear infinite;
+
+}
+
+.electricMemojiHighlight {
+
+  stroke: #e7ceff;
+
+  stroke-width: 2.7;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 14 170 7 260 22 380;
+
+  filter: drop-shadow(0 0 6px #d4a9ff);
+
+  animation: electricArcTravel 4.4s linear infinite reverse;
+
+}
+
+@keyframes electricArcTravel {
+
+  to { stroke-dashoffset: -840; }
+
+}
+
+@keyframes electricGlowPulse {
+
+  from { opacity: .35; stroke-width: 4; }
+
+  to { opacity: .85; stroke-width: 8; }
+
+}
+
+@keyframes electricMemojiFloat {
+
+  0%, 100% { transform: translateY(0); }
+
+  50% { transform: translateY(-13px); }
+
+}
+
+@media (max-width: 1100px) {
+
+  .electricMemojiShell { max-width: 295px; }
+
+}
+
+@media (max-width: 700px) {
+
+  .electricMemojiShell {
+
+    order: 2;
+
+    width: min(275px, 80vw);
+
+    max-width: none;
+
+    margin: 0 auto;
+
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .electricMemojiShell { animation: none !important; }
+
+  .electricMemojiGlow,
+
+  .electricMemojiArc,
+
+  .electricMemojiHighlight { animation: none !important; }
+
+  .electricMemojiSvg animate { display: none; }
+
+}
+
+/* ==========================================================
+
+   SUBTLE POLISH — stable hero layout, softened effects only
+
+   Applies on top of the original, working portfolio CSS.
+
+   ========================================================== */
+
+/* Keep the nebula visible but slightly calmer behind text. */
+
+.galaxyLayer { opacity: 0.82; }
+
+.nebulaImage { filter: saturate(0.96) contrast(1.02); }
+
+.nebulaVeil {
+
+  background:
+
+    linear-gradient(90deg, rgba(6, 4, 22, .39), rgba(8, 5, 25, .55) 50%, rgba(7, 4, 20, .53)),
+
+    linear-gradient(180deg, rgba(6, 3, 19, .13), rgba(8, 5, 24, .2) 65%, #08051d 100%);
+
+}
+
+.brightStar {
+
+  box-shadow:
+
+    0 0 4px 1px rgba(255,255,255,.8),
+
+    0 0 11px 3px rgba(182,170,255,.52),
+
+    0 0 23px 6px rgba(116,98,255,.19);
+
+  animation-duration: 7s;
+
+}
+
+.brightStar::before { height: calc(var(--star-size) * 6); }
+
+.brightStar::after { width: calc(var(--star-size) * 6); }
+
+.starDustNear { opacity: .29; }
+
+.starDustFar { opacity: .23; }
+
+/* Apply sizing/motion to the actual electric shell, not the inner card. */
+
+.electricMemojiShell {
+
+  max-width: 325px;
+
+  filter: drop-shadow(0 0 9px rgba(165,100,255,.17));
+
+  animation: subtleElectricFloat 8s ease-in-out infinite;
+
+}
+
+.electricMemojiShell .heroMemojiContainer {
+
+  border-color: rgba(209,171,255,.18);
+
+  background:
+
+    radial-gradient(ellipse at 50% 28%, rgba(113,58,196,.17), transparent 70%),
+
+    rgba(12,8,28,.77);
+
+}
+
+.electricMemojiGlow {
+
+  stroke: #a684e9;
+
+  stroke-width: 4;
+
+  opacity: .33;
+
+  animation: subtleElectricPulse 5.5s ease-in-out infinite alternate;
+
+}
+
+.electricMemojiArc {
+
+  stroke: #ad87f2;
+
+  stroke-width: 1.35;
+
+  filter: url(#memojiElectricDistortion) drop-shadow(0 0 3px rgba(145,71,255,.37));
+
+  animation-duration: 13s;
+
+}
+
+.electricMemojiHighlight {
+
+  stroke: #d9c3ff;
+
+  stroke-width: 1.4;
+
+  opacity: .55;
+
+  filter: drop-shadow(0 0 3px rgba(212,169,255,.35));
+
+  animation-duration: 7s;
+
+}
+
+@keyframes subtleElectricPulse {
+
+  from { opacity: .22; stroke-width: 3; }
+
+  to { opacity: .42; stroke-width: 5; }
+
+}
+
+@keyframes subtleElectricFloat {
+
+  0%, 100% { transform: translateY(0); }
+
+  50% { transform: translateY(-8px); }
+
+}
+
+.realMemoji { animation-duration: 6s; }
+
+/* Preserve original title, content layout and quote's lower placement. */
+
+.heroQuote {
+
+  margin-top: 42px;
+
+  margin-bottom: 27px;
+
+  color: #ddd1f5;
+
+  font-weight: 500;
+
+  text-shadow: 0 1px 8px rgba(5,3,20,.42);
+
+}
+
+.specularButton { box-shadow: 0 4px 18px rgba(147,91,223,.12); }
+
+.specularButton:hover { box-shadow: 0 7px 24px rgba(167,113,226,.18); }
+
+@media (max-width: 1100px) {
+
+  .electricMemojiShell { max-width: 290px; }
+
+}
+
+@media (max-width: 700px) {
+
+  .electricMemojiShell { width: min(275px,80vw); max-width: none; }
+
+  .heroQuote { margin-top: 32px; margin-bottom: 25px; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .electricMemojiShell, .electricMemojiGlow { animation: none !important; }
+
+}
+
+/* Integrated Gooey Nav — replaces all previous navbar effects */
+.site { padding-top: 78px; }
+.navShell, .navShell.navCompact {
+  position: fixed; z-index: 100; top: 13px; left: 50%;
+  transform: translateX(-50%); display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) 140px;
+  align-items: center; gap: 10px;
+  width: min(1100px, calc(100vw - 36px)); max-width: none;
+  height: 68px; margin: 0; padding: 0 18px;
+  border: 1px solid rgba(211,189,244,.18); border-radius: 999px;
+  background: rgba(9,7,20,.72);
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+  box-shadow: 0 10px 30px rgba(0,0,0,.24);
+  transition: width .45s ease, height .45s ease, top .45s ease, background .3s ease;
+}
+.navShell.navCompact {
+  width: min(980px, calc(100vw - 36px));
+  height: 58px; top: 18px;
+  background: rgba(16,11,32,.36);
+  backdrop-filter: blur(13px) saturate(150%);
+  -webkit-backdrop-filter: blur(13px) saturate(150%);
+}
+.navMonogram { display:flex; align-items:center; width:74px; height:42px; }
+.navMonogram svg { display:block; width:70px; height:34px; }
+.navMonogram:hover { filter:drop-shadow(0 0 6px rgba(188,149,255,.5)); }
+.navGooeyWrap { display:flex; justify-content:center; min-width:0; }
+.navActions { display:flex; justify-content:flex-end; align-items:center; }
+.navGithub { display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:11px 13px; background:rgba(34,23,65,.38); color:#f2e9ff; border-radius:13px;
+  font-size:16px; font-weight:700; white-space:nowrap;
+  border:1px solid rgba(211,183,255,.28);
+  backdrop-filter:blur(12px) saturate(125%);
+  -webkit-backdrop-filter:blur(12px) saturate(125%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+  transition:background .2s,transform .2s,border-color .2s,box-shadow .2s; }
+.navGithub:hover { background:rgba(89,59,142,.38); border-color:rgba(216,187,255,.54); transform:translateY(-1px); }
+.navShell .menuBtn { display:none; }
+/* Anchor targets clear the floating navigation */
+#about,#projects,#experience,#expertise,#education,#contact { scroll-margin-top:110px; }
+@media(max-width:1100px) and (min-width:901px) {
+  .navShell,.navShell.navCompact { grid-template-columns:66px minmax(0,1fr) 122px; padding:0 12px; gap:4px; }
+  .navGithub { font-size:14px; padding:9px 10px; gap:5px; }
+  .navGooeyWrap .gooey-nav-link { font-size:14px; padding:9px 7px; }
+}
+@media(max-width:900px) {
+  .navShell,.navShell.navCompact { width:calc(100vw - 24px); height:60px; top:12px;
+    grid-template-columns:1fr auto; padding:0 14px; }
+  .navActions { grid-column:2; }
+  .navShell .menuBtn { display:inline-flex; margin-left:10px; color:#f5eeff; border:0; background:transparent; }
+  .navGithub { font-size:13px; padding:8px 10px; }
+  .navGooeyWrap { display:none; position:absolute; top:68px; left:0; right:0;
+    padding:12px; border:1px solid #9d81b755; border-radius:18px;
+    background:rgba(13,10,25,.95); backdrop-filter:blur(18px); }
+  .navGooeyWrap.open { display:flex; }
+  .navGooeyWrap .gooey-nav-list { flex-wrap:wrap; }
+}
+/* Scroll cue positioned under Memoji */
+.heroContent { position:relative; }
+.memojiScrollCue {position:absolute;left:0;bottom:-84px;z-index:4;width:34%;
+  display:flex;align-items:center;flex-direction:column;gap:10px;color:#d6c9ee;
+  font-size:13px;font-weight:500;letter-spacing:.02em;text-decoration:none;}
+.scrollMouse {position:relative;display:block;width:28px;height:45px;
+  border:1.7px solid rgba(220,204,247,.68);border-radius:17px;background:rgba(15,10,30,.15);}
+.scrollMouse i {position:absolute;top:9px;left:50%;width:5px;height:7px;
+  border-radius:5px;background:#e6d6ff;animation:mouseWheel 2.2s ease-in-out infinite;}
+@keyframes mouseWheel {0%,100%{opacity:0;transform:translate(-50%,0)}
+  24%{opacity:1;transform:translate(-50%,0)}80%{opacity:0;transform:translate(-50%,13px)}}
+.electricMemojiShell {animation:memojiBounceGentle 5.2s ease-in-out infinite;}
+@keyframes memojiBounceGentle {0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+@media(max-width:700px) {.memojiScrollCue {position:static;order:3;width:100%;margin:-17px auto 10px;} .heroContent{gap:22px;}}
+@media(prefers-reduced-motion:reduce) {.electricMemojiShell,.scrollMouse i{animation:none!important;}.navShell{transition:none!important;}}
+
+
+/* =======================================================
+   HIRING-FOCUSED ABOUT ME / FOUR BORDER GLOW CARDS
+   Scoped selectors keep the rest of the portfolio intact.
+   ======================================================= */
+.aboutShowcase {
+  padding-top: 110px;
+  padding-bottom: 125px;
+}
+.aboutShowcaseHead {
+  margin: 56px 0 48px;
+  max-width: 1070px;
+}
+.aboutEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #c5afea;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .19em;
+}
+.aboutEyebrowDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ba96ff;
+  box-shadow: 0 0 14px #ad78fa;
+}
+.aboutShowcase .aboutStatement {
+  margin: 21px 0 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(32px, 4.3vw, 65px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.065em;
+  color: #faf6ff;
+  text-wrap: balance;
+}
+.aboutShowcase .aboutStatement em {
+  font-style: normal;
+  background: linear-gradient(110deg,#ad9bff,#dcb8f7 55%,#f4e8ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.aboutStatementDivider {color:#8671b0;font-weight:400; padding:0 .06em;}
+.aboutShowcaseGrid {
+  display: grid;
+  grid-template-columns: minmax(0,.95fr) minmax(0,1.05fr);
+  gap: clamp(35px, 5vw, 90px);
+  align-items: center;
+}
+.aboutNarrative {min-width:0;}
+.aboutNarrative p {
+  margin: 0 0 20px;
+  color: #bcb4cf;
+  font-size: 15px;
+  line-height: 1.85;
+}
+.aboutNarrative p.aboutLead {
+  color: #f1eafa;
+  font-size: clamp(17px,1.6vw,21px);
+  font-weight: 600;
+  line-height: 1.65;
+}
+.aboutActions { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:31px; }
+.aboutPrimaryButton, .aboutResumeButton {
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  padding:13px 18px; min-height:47px;
+  border-radius:999px; font-size:13px; font-weight:700;
+  transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.aboutPrimaryButton {background:#bfa5fd; color:#1b1230; box-shadow:0 6px 23px #7c48ce28;}
+.aboutPrimaryButton:hover {background:#d5c1ff; transform:translateY(-2px);}
+.aboutResumeButton {color:#eee4ff; border:1px solid #9380b5a8; background:#17102580;}
+.aboutResumeButton:hover {background:#34234f; transform:translateY(-2px);}
+.aboutMicroProof {display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:23px;}
+.aboutMicroProof span {font-size:11px; color:#a79cbd;}
+.aboutMicroProof span::before {content:'✦';color:#ab8bf6;margin-right:7px;}
+.aboutExpertiseGrid {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; padding:20px 0;}
+.aboutExpertiseCard {min-height:210px;}
+.aboutExpertiseCard .border-glow-inner {padding:27px 23px 25px;justify-content:flex-start;}
+.aboutExpertiseIcon {color:#c5a5ff; margin-bottom:22px; filter:drop-shadow(0 0 12px #9962e350);}
+.aboutExpertiseCard h3 {margin:0 0 10px;font-size:16px;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;letter-spacing:-.025em;color:#f8f2ff;line-height:1.4;}
+.aboutExpertiseCard p {margin:0;font-size:12px;line-height:1.75;color:#b3aac6;}
+@media (max-width:900px) {
+  .aboutShowcaseGrid {grid-template-columns:1fr;gap:28px;}
+  .aboutShowcaseHead {margin:38px 0 27px;}
+  .aboutExpertiseGrid {padding:5px 0;}
+}
+@media (max-width:540px) {
+  .aboutShowcase {padding-top:72px;padding-bottom:80px;}
+  .aboutShowcase .aboutStatement {font-size:clamp(30px,8vw,41px);}
+  .aboutExpertiseGrid {gap:12px;}
+  .aboutExpertiseCard {min-height:205px;}
+  .aboutExpertiseCard .border-glow-inner {padding:20px 15px;}
+  .aboutExpertiseCard h3 {font-size:13px;}
+  .aboutExpertiseCard p {font-size:11px;}
+  .aboutExpertiseIcon {margin-bottom:16px;}
+}
+
+
+/* ABOUT PORTRAIT + SUBTLE GALAXY (only the About section) */
+.aboutShowcase {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.aboutShowcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .17;
+  background-image: linear-gradient(90deg, rgba(8,5,29,.86), rgba(8,5,29,.70)), url('/galaxy-nebula.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 80%, transparent 100%);
+}
+.aboutShowcase > * { position: relative; z-index: 1; }
+.aboutShowcaseGrid { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: center; }
+.aboutShowcaseHead { margin: 0 0 24px; }
+.aboutShowcase .aboutStatement { font-size: clamp(27px, 2.5vw, 39px); line-height: 1.28; letter-spacing: -.044em; }
+.aboutPortraitFrame {
+  width: clamp(144px, 13vw, 185px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 4px 0 27px;
+  background: linear-gradient(135deg, rgba(236,216,255,.88),rgba(123,86,205,.48),rgba(236,216,255,.2));
+  box-shadow: 0 0 0 1px rgba(207,177,255,.16), 0 13px 40px rgba(0,0,0,.27), 0 0 25px rgba(147,95,227,.12);
+}
+.aboutPortrait {
+  width: 100%; height: 100%; display: block;
+  object-fit: cover; object-position: center 43%;
+  border-radius: 50%;
+  background: #1d152b;
+}
+.aboutNarrative p { font-size: 14px; line-height: 1.76; margin-bottom: 14px; }
+.aboutNarrative p.aboutLead { font-size: 15px; line-height: 1.75; font-weight: 500; }
+.aboutExpertiseGrid { align-self: center; }
+@media (max-width: 900px) {
+  .aboutShowcaseGrid { grid-template-columns: 1fr; gap: 34px; }
+  .aboutPortraitFrame { margin-inline: auto; }
+  .aboutShowcaseHead { text-align: center; }
+  .aboutShowcase .aboutStatement { font-size: clamp(28px, 5vw, 39px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aboutPortraitFrame { animation: none !important; }
+}
+
+
+/* ABOUT ME — human-centered editorial layout (overrides only the About section) */
+.aboutShowcase {
+  padding-top: clamp(85px, 9vw, 132px);
+  padding-bottom: clamp(90px, 9vw, 140px);
+}
+.aboutShowcase::before { opacity: .11; }
+.aboutShowcaseGrid {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  gap: clamp(42px, 5vw, 90px);
+  align-items: center;
+  margin-top: 36px;
+}
+.aboutIntroTop {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 2.7vw, 42px);
+  margin-bottom: 29px;
+}
+.aboutShowcase .aboutPortraitFrame {
+  width: clamp(165px, 16vw, 220px);
+  min-width: clamp(165px, 16vw, 220px);
+  margin: 0;
+  padding: 5px;
+  aspect-ratio: 1;
+  box-shadow: 0 0 0 1px rgba(207,177,255,.18), 0 16px 38px rgba(0,0,0,.24);
+}
+.aboutShowcase .aboutPortrait {
+  object-fit: cover;
+  object-position: center 43%;
+}
+.aboutShowcase .aboutShowcaseHead { margin: 0; text-align: left; }
+.aboutShowcase .aboutEyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: #bcb1cd;
+}
+.aboutShowcase .aboutSectionTitle {
+  margin: 10px 0 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(44px, 4.8vw, 72px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -.065em;
+  color: #fffaff;
+}
+.aboutShowcase .aboutSectionTitle em {
+  color: #bda3fa;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  font-style: normal;
+}
+.aboutShowcase .aboutStatement {
+  margin: 0 0 25px;
+  font-size: clamp(22px, 2.1vw, 29px);
+  line-height: 1.34;
+  letter-spacing: -.035em;
+  font-weight: 700;
+  text-wrap: pretty;
+}
+.aboutShowcase .aboutStatement em {
+  background: none;
+  color: #cdb7f8;
+  -webkit-text-fill-color: currentColor;
+}
+.aboutShowcase .aboutStatementDivider { color: #84769f; }
+.aboutShowcase .aboutNarrative p {
+  font-size: 15px;
+  line-height: 1.83;
+  color: #c5bed0;
+  margin: 0 0 17px;
+}
+.aboutShowcase .aboutNarrative p.aboutLead {
+  font-size: 16px;
+  line-height: 1.76;
+  color: #f0ebf9;
+  font-weight: 500;
+}
+.aboutShowcase .aboutActions { margin-top: 29px; }
+.aboutShowcase .aboutExpertiseGrid { gap: 16px; }
+.aboutShowcase .aboutExpertiseCard { min-height: 224px; }
+.aboutShowcase .aboutExpertiseCard .border-glow-inner { padding: 27px 22px; }
+@media (max-width: 960px) {
+  .aboutShowcaseGrid { grid-template-columns: 1fr; gap: 38px; }
+  .aboutShowcase .aboutExpertiseGrid { max-width: 730px; width: 100%; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .aboutShowcaseGrid { margin-top: 26px; }
+  .aboutIntroTop { gap: 18px; }
+  .aboutShowcase .aboutPortraitFrame { width: 132px; min-width: 132px; }
+  .aboutShowcase .aboutSectionTitle { font-size: clamp(39px, 9vw, 54px); }
+  .aboutShowcase .aboutEyebrow { font-size: 9px; letter-spacing: .07em; }
+  .aboutShowcase .aboutStatement { font-size: clamp(20px, 5vw, 25px); }
+  .aboutShowcase .aboutNarrative p { font-size: 14px; }
+  .aboutShowcase .aboutExpertiseCard { min-height: 200px; }
+}
+
+/* ===== ABOUT ME: FINAL CLEAN EDITORIAL REFINEMENT ===== */
+/* Remove decorative strips; retain the functional mouse cue under Memoji. */
+.hero { justify-content: center; }
+.heroContent { flex: 1; }
+.aboutShowcase .aboutShowcaseGrid { margin-top: 18px; }
+.aboutShowcase .aboutIntroTop { margin-bottom: 27px; }
+.aboutShowcase .aboutSectionTitle { margin-top: 0; font-size: clamp(52px, 5.5vw, 84px); }
+.aboutMaskWord { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .12em; margin-bottom: -.12em; }
+.aboutMaskReveal { display: inline-block; animation: aboutMaskEntrance .85s cubic-bezier(.16,1,.3,1) both; }
+.aboutMaskWord:nth-child(2) .aboutMaskReveal { animation-delay: .15s; }
+.aboutMaskAccent { color: #bea3ff; }
+@keyframes aboutMaskEntrance { from { transform:translateY(112%);opacity:.15; } to { transform:translateY(0);opacity:1; } }
+.aboutShowcase .aboutExpertiseCard { min-height: 252px; }
+.aboutShowcase .aboutExpertiseCard .border-glow-inner { padding: 28px 23px; }
+.aboutShowcase .aboutExpertiseCard h3 { font-size: 16px; }
+.aboutShowcase .aboutExpertiseCard p { font-size: 13px; line-height: 1.66; }
+.aboutShowcase .aboutPortraitFrame { overflow: hidden; }
+.aboutShowcase .aboutPortrait { width:100%; height:100%; object-fit:cover; object-position: 50% 30%; }
+@media (max-width:960px) { .aboutShowcase .aboutExpertiseCard { min-height:220px; } }
+@media (max-width:600px) { .aboutShowcase .aboutSectionTitle { font-size:clamp(38px,9vw,56px); } .aboutShowcase .aboutExpertiseCard { min-height:230px; } }
+@media (prefers-reduced-motion:reduce) { .aboutMaskReveal { animation:none; } }
+
+
+/* ========================================================
+   FINAL LAYOUT FIXES — October 2026
+   These rules correspond to the current React structure.
+   ======================================================== */
+
+/* Navbar: wide at top, narrower after scroll, same height. */
+@media (min-width: 1101px) {
+  .navShell, .navShell.navCompact {
+    height: 68px;
+    top: 13px;
+    grid-template-columns: 76px minmax(0,1fr) 140px;
+    transition: width 650ms cubic-bezier(.22,1,.36,1), background 250ms ease;
+  }
+  .navShell:not(.navCompact) { width: min(1200px, calc(100vw - 48px)); }
+  .navShell.navCompact { width: min(800px, calc(100vw - 48px)); }
+}
+
+/* The left hero grid cell owns both the avatar and the scroll cue.
+   No absolute positioning relative to the entire hero. */
+.heroPortraitColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  gap: 25px;
+}
+.heroPortraitColumn .electricMemojiShell {
+  width: min(100%, 325px);
+  flex: 0 0 auto;
+}
+.heroPortraitColumn .memojiScrollCue {
+  position: static;
+  inset: auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin: 0;
+  gap: 10px;
+  transform: none;
+  font-size: 13px;
+  white-space: nowrap;
+  text-align: center;
+}
+.heroPortraitColumn .scrollMouse { flex: 0 0 auto; }
+
+/* Visible yet low-contrast nebula inside About.
+   The earlier opacity .11 combined with an .86 overlay made it disappear. */
+.aboutShowcase {
+  background: #0b071e;
+}
+.aboutShowcase::before {
+  opacity: 0.64;
+  background-image:
+    linear-gradient(90deg, rgba(8,5,29,.57), rgba(8,5,29,.62)),
+    url('/galaxy-nebula.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+}
+.aboutShowcase > * { position: relative; z-index: 1; }
+.aboutShowcase .aboutPortraitFrame { overflow: hidden; }
+.aboutShowcase .aboutPortrait { object-fit: cover; object-position: 50% 30%; }
+
+/* Keep the About title readable, sized below the hero name. */
+.aboutShowcase .aboutSectionTitle { font-size: clamp(38px, 3.7vw, 58px); }
+
+@media (max-width: 900px) {
+  .heroPortraitColumn { order: 2; gap: 20px; }
+  .heroPortraitColumn .electricMemojiShell { width: min(275px,80vw); }
+  .heroPortraitColumn .memojiScrollCue { order: initial; margin: 0; }
+}
+@media (max-width: 700px) {
+  .heroContent { gap: 25px; }
+  .heroPortraitColumn { gap: 18px; }
+  .aboutShowcase::before { opacity: 0.45; }
+}
+
+/* =========================================================
+   ABOUT SECTION — balanced layout repair
+   Overrides only the About section, not navigation or hero.
+   ========================================================= */
+.aboutShowcase.section {
+  width: min(100% - 64px, 1540px);
+  max-width: 1540px;
+  margin-inline: auto;
+  padding: 58px clamp(20px, 3vw, 48px) 94px;
+  border-top: 1px solid rgba(221, 199, 255, .13);
+  background: #0b071e;
+}
+.aboutShowcase::before {
+  opacity: .52;
+  background-image: linear-gradient(90deg, rgba(8,5,29,.57), rgba(8,5,29,.58)), url('/galaxy-nebula.webp');
+  background-size: cover;
+  background-position: center 48%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+.aboutShowcase .aboutShowcaseGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(36px, 4.5vw, 76px);
+  align-items: start;
+  margin-top: 0;
+}
+.aboutShowcase .aboutNarrative { min-width: 0; }
+.aboutShowcase .aboutIntroTop {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin: 0 0 27px;
+}
+.aboutShowcase .aboutPortraitFrame {
+  width: clamp(158px, 13.5vw, 196px);
+  min-width: clamp(158px, 13.5vw, 196px);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+}
+.aboutShowcase .aboutPortrait {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+.aboutShowcase .aboutSectionTitle {
+  margin: 0;
+  font-size: clamp(38px, 3.4vw, 53px);
+  line-height: 1.12;
+  letter-spacing: -.06em;
+}
+.aboutShowcase .aboutStatement {
+  margin: 0 0 24px;
+  font-size: clamp(23px, 2.05vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -.035em;
+  color: #f6f1ff;
+}
+.aboutShowcase .aboutNarrative p,
+.aboutShowcase .aboutNarrative p.aboutLead {
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.76;
+  font-weight: 400;
+  color: #e1d9ee;
+  margin: 0 0 17px;
+}
+.aboutShowcase .aboutExpertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-self: start;
+  padding: 22px 0 0;
+  width: 100%;
+}
+.aboutShowcase .aboutExpertiseCard { min-height: 258px; }
+.aboutShowcase .aboutExpertiseCard .border-glow-inner { padding: 25px 22px; }
+.aboutShowcase .aboutExpertiseCard h3 { font-size: 16px; }
+.aboutShowcase .aboutExpertiseCard p { font-size: 13px; line-height: 1.65; }
+@media (max-width: 1050px) {
+  .aboutShowcase.section { width: calc(100% - 32px); padding: 55px 23px 76px; }
+  .aboutShowcase .aboutShowcaseGrid { grid-template-columns: 1fr; gap: 30px; }
+  .aboutShowcase .aboutExpertiseGrid { max-width: none; margin: 0; padding-top: 0; }
+  .aboutShowcase .aboutExpertiseCard { min-height: 214px; }
+}
+@media (max-width: 600px) {
+  .aboutShowcase.section { width: 100%; padding: 47px 18px 72px; }
+  .aboutShowcase .aboutIntroTop { gap: 16px; margin-bottom: 26px; }
+  .aboutShowcase .aboutPortraitFrame { width: 120px; min-width: 120px; }
+  .aboutShowcase .aboutSectionTitle { font-size: clamp(35px, 8.5vw, 46px); }
+  .aboutShowcase .aboutStatement { font-size: clamp(20px, 5.5vw, 25px); }
+  .aboutShowcase .aboutExpertiseGrid { gap: 12px; }
+  .aboutShowcase .aboutExpertiseCard { min-height: 228px; }
+  .aboutShowcase .aboutExpertiseCard .border-glow-inner { padding: 19px 15px; }
+  .aboutShowcase .aboutExpertiseCard h3 { font-size: 13px; }
+  .aboutShowcase .aboutExpertiseCard p { font-size: 11px; }
+}
+
+/* ===============================================================
+   ABOUT — cohesive editorial composition
+   Section-wide portrait/title; aligned two-column content beneath.
+   Keep all existing behavior/animations and BorderGlow components.
+   =============================================================== */
+.aboutShowcase.section {
+  width: min(100% - 60px, 1480px);
+  max-width: 1480px;
+  padding: 66px clamp(30px, 4vw, 70px) 100px;
+  background-color: #0b071d;
+  border-top: 1px solid rgba(202, 179, 255, .12);
+}
+.aboutShowcase::before {
+  opacity: .44;
+  background-image:
+    linear-gradient(90deg, rgba(9, 6, 29, .55), rgba(9, 6, 29, .66)),
+    url('/galaxy-nebula.webp');
+  background-size: cover;
+  background-position: center;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 88%, transparent 100%);
+}
+.aboutShowcase .aboutHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 27px;
+  margin: 0 0 40px;
+}
+.aboutShowcase .aboutHeaderRow .aboutPortraitFrame {
+  flex: 0 0 144px;
+  width: 144px;
+  min-width: 144px;
+  aspect-ratio: 1;
+  padding: 4px;
+  overflow: hidden;
+  margin: 0;
+}
+.aboutShowcase .aboutHeaderRow .aboutPortrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+}
+.aboutShowcase .aboutHeaderRow .aboutShowcaseHead { margin: 0; }
+.aboutShowcase .aboutHeaderRow .aboutSectionTitle {
+  font-size: clamp(36px, 3.45vw, 53px);
+  line-height: 1.18;
+  margin: 0;
+  letter-spacing: -.055em;
+}
+.aboutShowcase .aboutShowcaseGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  gap: clamp(38px, 4.2vw, 68px);
+  align-items: start;
+  margin-top: 0;
+}
+.aboutShowcase .aboutNarrative { min-width: 0; }
+.aboutShowcase .aboutStatement {
+  margin: 0 0 23px;
+  color: #f7f3ff;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.34;
+  font-weight: 700;
+  letter-spacing: -.035em;
+}
+.aboutShowcase .aboutNarrative p,
+.aboutShowcase .aboutNarrative p.aboutLead {
+  margin: 0 0 17px;
+  color: #ded7e9;
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+.aboutShowcase .aboutActions { margin-top: 26px; }
+.aboutShowcase .aboutExpertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  padding: 0;
+  align-self: start;
+}
+.aboutShowcase .aboutExpertiseCard { min-height: 227px; }
+.aboutShowcase .aboutExpertiseCard .border-glow-inner { padding: 24px 22px; }
+.aboutShowcase .aboutExpertiseCard h3 { font-size: 15px; line-height: 1.4; }
+.aboutShowcase .aboutExpertiseCard p { font-size: 12.5px; line-height: 1.65; }
+.aboutShowcase .aboutExpertiseIcon { margin-bottom: 16px; }
+@media (max-width: 1070px) {
+  .aboutShowcase.section { width: calc(100% - 30px); padding: 54px 28px 80px; }
+  .aboutShowcase .aboutShowcaseGrid { grid-template-columns: 1fr; gap: 32px; }
+  .aboutShowcase .aboutExpertiseGrid { max-width: 760px; margin: 0; }
+  .aboutShowcase .aboutExpertiseCard { min-height: 205px; }
+}
+@media (max-width: 600px) {
+  .aboutShowcase.section { width: 100%; padding: 45px 19px 70px; }
+  .aboutShowcase .aboutHeaderRow { gap: 17px; margin-bottom: 30px; }
+  .aboutShowcase .aboutHeaderRow .aboutPortraitFrame {
+    flex-basis: 106px; width: 106px; min-width: 106px;
+  }
+  .aboutShowcase .aboutHeaderRow .aboutSectionTitle { font-size: clamp(33px, 8vw, 43px); }
+  .aboutShowcase .aboutStatement { font-size: clamp(20px, 5.1vw, 25px); }
+  .aboutShowcase .aboutNarrative p,
+  .aboutShowcase .aboutNarrative p.aboutLead { font-size: 14px; }
+  .aboutShowcase .aboutExpertiseGrid { gap: 11px; }
+  .aboutShowcase .aboutExpertiseCard { min-height: 225px; }
+  .aboutShowcase .aboutExpertiseCard .border-glow-inner { padding: 18px 14px; }
+  .aboutShowcase .aboutExpertiseCard h3 { font-size: 13px; }
+  .aboutShowcase .aboutExpertiseCard p { font-size: 11px; }
+}
+
+/* =============================================================
+   HERO → ABOUT: NATURAL CONTINUOUS PAGE FLOW
+   Keep both sections content-led: no artificial spacer between them.
+   ============================================================= */
+.hero {
+  height: auto;
+  min-height: 0;
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(76px, 8vh, 105px);
+  padding-bottom: clamp(65px, 7vh, 90px);
+}
+.hero .heroContent {
+  flex: 0 0 auto;
+  margin: 0;
+  align-items: center;
+}
+/* Mouse cue is anchored under its Memoji column, not the page bottom. */
+@media (min-width: 701px) {
+  .hero .memojiScrollCue {
+    bottom: -72px;
+  }
+}
+
+/* Full-bleed About background with a continuous transition from Hero. */
+.aboutShowcase.section {
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  padding: clamp(72px, 8vh, 94px) clamp(32px, 5.5vw, 104px) clamp(75px, 8vh, 100px);
+  border-top: 0;
+  background-color: #0b071d;
+  box-sizing: border-box;
+}
+.aboutShowcase::before {
+  opacity: .5;
+  background-image:
+    linear-gradient(90deg, rgba(8, 5, 28, .65), rgba(8, 5, 28, .58)),
+    url('/galaxy-nebula.webp');
+  background-size: cover;
+  background-position: center top;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.aboutShowcase .aboutHeaderRow {
+  gap: clamp(22px, 2.6vw, 40px);
+  margin-bottom: clamp(30px, 4vh, 48px);
+}
+.aboutShowcase .aboutHeaderRow .aboutPortraitFrame {
+  flex: 0 0 clamp(135px, 10vw, 170px);
+  width: clamp(135px, 10vw, 170px);
+  min-width: clamp(135px, 10vw, 170px);
+}
+.aboutShowcase .aboutShowcaseGrid {
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
+  gap: clamp(34px, 5vw, 90px);
+  align-items: start;
+}
+.aboutShowcase .aboutExpertiseGrid { gap: clamp(14px, 1.5vw, 22px); }
+.aboutShowcase .aboutExpertiseCard { min-height: clamp(220px, 24vh, 285px); }
+@media (max-width: 1070px) {
+  .aboutShowcase.section {
+    width: 100%;
+    max-width: none;
+    padding: 75px clamp(20px, 5vw, 54px) 80px;
+  }
+  .aboutShowcase .aboutShowcaseGrid { grid-template-columns: 1fr; gap: 42px; }
+  .aboutShowcase .aboutExpertiseGrid { max-width: none; }
+}
+@media (max-width: 700px) {
+  .hero { height: auto; min-height: 0; padding-top: 48px; padding-bottom: 44px; }
+  .hero .heroContent { margin: 0; }
+  .hero .memojiScrollCue { position: static; margin: 4px auto 0; }
+}
+@media (max-width: 600px) {
+  .aboutShowcase.section { width: 100%; padding: 62px 19px 72px; }
+  .aboutShowcase .aboutHeaderRow { gap: 17px; margin-bottom: 32px; }
+  .aboutShowcase .aboutHeaderRow .aboutPortraitFrame {
+    flex-basis: 106px; width: 106px; min-width: 106px;
+  }
+  .aboutShowcase .aboutExpertiseGrid { gap: 11px; }
+  .aboutShowcase .aboutExpertiseCard { min-height: 225px; }
+}
+
+/* =============================================================
+   HERO: EXACTLY ONE DESKTOP VIEWPORT
+   The site has 78px of top padding for its fixed navigation.
+   Hero fills the remaining viewport height so About begins below
+   the fold. Mobile uses content-driven height to avoid clipping.
+   ============================================================= */
+@media (min-width: 701px) {
+  .site > main > .hero {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1320px;
+    height: calc(100svh - 78px);
+    min-height: 650px;
+    padding-top: clamp(24px, 4vh, 46px);
+    padding-bottom: clamp(62px, 8vh, 88px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .site > main > .hero .heroContent {
+    flex: 0 0 auto;
+    margin: 0;
+    align-items: center;
+  }
+  .site > main > .hero .memojiScrollCue {
+    bottom: -75px;
+  }
+}
+@media (max-width: 700px) {
+  .site > main > .hero {
+    height: auto;
+    min-height: calc(100svh - 78px);
+    padding-top: 36px;
+    padding-bottom: 42px;
+  }
+}
+
+/* ============================================================
+   CONTINUOUS HERO → ABOUT GALAXY (final scoped adjustments)
+   Same nebula asset, slow movement, and soft twinkling stars.
+   The About backdrop stays behind all content and remains subtle.
+   ============================================================ */
+.aboutShowcase.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0a061d;
+  border-top: 0;
+  padding-top: clamp(34px, 4.5vw, 55px);
+}
+
+/* Unlike the old static background this layer breathes like the Hero. */
+.aboutShowcase::before {
+  content: "";
+  position: absolute;
+  inset: -7%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .83;
+  background-image:
+    linear-gradient(90deg, rgba(7,4,22,.49), rgba(9,5,27,.55) 50%, rgba(7,4,22,.5)),
+    linear-gradient(180deg, rgba(8,5,24,.14), rgba(8,5,24,.2)),
+    url('/galaxy-nebula.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 48%;
+  filter: saturate(.93) contrast(1.04);
+  -webkit-mask-image: none;
+  mask-image: none;
+  transform-origin: center center;
+  animation: aboutNebulaBreathing 34s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Separate subtle star field, allowing the nebula to move independently. */
+.aboutShowcase::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 12% 22%, rgba(245,236,255,.80) 98%, transparent),
+    radial-gradient(1.5px 1.5px at 78% 18%, rgba(218,197,255,.78) 98%, transparent),
+    radial-gradient(2px 2px at 68% 65%, rgba(240,226,255,.62) 98%, transparent),
+    radial-gradient(1px 1px at 38% 75%, rgba(210,195,255,.65) 98%, transparent);
+  background-size: 390px 310px, 330px 280px, 470px 340px, 280px 260px;
+  opacity: .24;
+  animation: aboutStarsTwinkle 8s ease-in-out infinite alternate;
+}
+
+.aboutShowcase > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes aboutNebulaBreathing {
+  from { transform: scale(1) translate3d(-.6%, 0, 0); }
+  to   { transform: scale(1.08) translate3d(1%, -.8%, 0); }
+}
+@keyframes aboutStarsTwinkle {
+  from { opacity: .15; }
+  to   { opacity: .37; }
+}
+
+@media (max-width: 700px) {
+  .aboutShowcase.section { padding-top: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aboutShowcase::before,
+  .aboutShowcase::after { animation: none !important; }
+}
+
+
+/* Lighting correction: same luminous purple atmosphere on Hero and About. */
+.galaxyLayer { opacity: 1; }
+.nebulaImage { filter: saturate(1.13) contrast(1.03) brightness(1.16); }
+.nebulaVeil {
+  background:
+    linear-gradient(90deg, rgba(6,4,22,.20), rgba(8,5,25,.30) 50%, rgba(7,4,20,.24)),
+    linear-gradient(180deg, rgba(6,3,19,.07) 0%, rgba(8,5,24,.12) 69%, #08051d 100%);
+}
+.aboutShowcase.section { background: #0b071e; }
+.aboutShowcase::before {
+  opacity: 1;
+  background-image:
+    linear-gradient(90deg, rgba(7,4,22,.22), rgba(9,5,27,.26) 50%, rgba(7,4,22,.23)),
+    url('/galaxy-nebula.webp');
+  filter: saturate(1.13) contrast(1.04) brightness(1.15);
+}
+/* Controlled nav begins without an active pill in the Hero section. */
+
+
+/* ============================================================
+   FINAL BALANCE — SOFTER GALAXY + GLASS ABOUT CARDS
+   Preserve motion, hero sizing, navbar and section layout.
+   ============================================================ */
+.galaxyLayer { opacity: .93; }
+.nebulaImage { filter: saturate(1.03) contrast(1.01) brightness(1.05); }
+.nebulaVeil {
+  background:
+    linear-gradient(90deg, rgba(6,4,22,.29), rgba(8,5,25,.40) 50%, rgba(7,4,20,.34)),
+    linear-gradient(180deg, rgba(6,3,19,.09) 0%, rgba(8,5,24,.17) 69%, #08051d 100%);
+}
+.aboutShowcase::before {
+  opacity: .84;
+  background-image:
+    linear-gradient(90deg, rgba(7,4,22,.35), rgba(9,5,27,.38) 50%, rgba(7,4,22,.35)),
+    url('/galaxy-nebula.webp');
+  filter: saturate(1.01) contrast(1.02) brightness(1.05);
+}
+.aboutShowcase::after { opacity: .19; }
+
+/* Restore the original cursor-reactive Border Glow layers.
+   Frost the card content only, so the original edge effect stays visible. */
+.aboutShowcase .aboutExpertiseCard.border-glow-card {
+  --card-bg: rgba(24, 17, 45, .58) !important;
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(255, 255, 255, .16);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 12px 42px rgba(0, 0, 0, .16);
+}
+.aboutShowcase .aboutExpertiseCard.border-glow-card:hover {
+  border-color: rgba(255, 255, 255, .16);
+  background: var(--card-bg) !important;
+  box-shadow: 0 12px 42px rgba(0, 0, 0, .16);
+}
+.aboutShowcase .aboutExpertiseCard .border-glow-inner {
+  background: transparent;
+}
+
+/* ============================================================
+   HERO → ABOUT: SOFT SEAMLESS GALAXY TRANSITION
+   Preserve the existing galaxy animation and frosted glass cards.
+   ============================================================ */
+.hero { border-bottom: 0; }
+.aboutShowcase.section { border-top: 0 !important; }
+/* Fade the new nebula into the previous section instead of
+   introducing a hard full-width horizontal edge. */
+.aboutShowcase::before {
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%, rgba(0,0,0,.12) 8%, rgba(0,0,0,.65) 22%,
+    #000 38%, #000 92%, rgba(0,0,0,.85) 100%);
+  mask-image: linear-gradient(to bottom,
+    transparent 0%, rgba(0,0,0,.12) 8%, rgba(0,0,0,.65) 22%,
+    #000 38%, #000 92%, rgba(0,0,0,.85) 100%);
+}
+.aboutShowcase::after {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 30%);
+}
+
+/* ============================================================
+   GALAXY MOTION RESTORED — HERO AND ABOUT
+   Keep the softer colors and seamless transition. Movement is
+   intentionally visible, but slow and free of harsh flashing.
+   ============================================================ */
+@keyframes portfolioGalaxyDrift {
+  0%   { transform: translate3d(-1.4%, .5%, 0) scale(1.055); }
+  50%  { transform: translate3d(1.5%, -1.2%, 0) scale(1.12); }
+  100% { transform: translate3d(-.8%, 1.1%, 0) scale(1.065); }
+}
+@keyframes portfolioAboutNebulaDrift {
+  0%   { transform: translate3d(-1.5%, .5%, 0) scale(1.065); }
+  50%  { transform: translate3d(1.7%, -1.5%, 0) scale(1.13); }
+  100% { transform: translate3d(-1%, .8%, 0) scale(1.075); }
+}
+@keyframes portfolioStarShimmer {
+  0%   { opacity: .15; }
+  50%  { opacity: .36; }
+  100% { opacity: .19; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .galaxyLayer .nebulaImage {
+    animation: portfolioGalaxyDrift 25s ease-in-out infinite !important;
+    transform-origin: center center;
+    will-change: transform;
+  }
+  .aboutShowcase.section::before {
+    animation: portfolioAboutNebulaDrift 25s ease-in-out infinite !important;
+    transform-origin: center center;
+    will-change: transform;
+  }
+  .aboutShowcase.section::after {
+    animation: portfolioStarShimmer 7s ease-in-out infinite !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .galaxyLayer .nebulaImage,
+  .aboutShowcase.section::before,
+  .aboutShowcase.section::after {
+    animation: none !important;
+    will-change: auto;
+  }
+}
+
+/* FINAL: Official liquid Gooey Nav within the existing floating navbar */
+.navGooeyWrap .gooey-nav { max-width: 100%; }
+.navGooeyWrap .gooey-nav__list { flex-wrap: nowrap; }
+.navGooeyWrap .gooey-nav__link { white-space: nowrap; }
+@media (min-width:1101px) {
+  .navShell .gooey-nav { --gn-font: 15px; --gn-x: 11px; --gn-y: 9px; --gn-gap: 2px; }
+}
+@media (min-width:901px) and (max-width:1100px) {
+  .navShell .gooey-nav { --gn-font: 13px; --gn-x: 7px; --gn-y: 8px; --gn-gap: 1px; }
+}
+@media(max-width:900px) {
+  .navGooeyWrap .gooey-nav__list { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ============================================================
+   FINAL ABOUT LAYOUT — 1200px centered content, full-bleed galaxy
+   Original React Bits BorderGlow layers retained and softened.
+   ============================================================ */
+:root {
+  --portfolio-content-width: 1200px;
+  --portfolio-side-gutter: 32px;
+}
+
+/* Later portfolio sections share equal side margins. */
+.site main > .section:not(.aboutShowcase),
+.site main > .contactBlock,
+.site > footer,
+.site main > footer {
+  width: min(var(--portfolio-content-width), calc(100% - 2 * var(--portfolio-side-gutter)));
+  max-width: var(--portfolio-content-width);
+  margin-inline: auto;
+  padding-inline: 0;
+  box-sizing: border-box;
+}
+
+/* Only the background of About spans the window. */
+.site main > .aboutShowcase.section {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding: 82px 0 98px;
+  border-top: 0;
+  box-sizing: border-box;
+}
+
+/* Portrait/header and main two-column layout share an exact left edge. */
+.site main > .aboutShowcase.section > .aboutHeaderRow,
+.site main > .aboutShowcase.section > .aboutShowcaseGrid {
+  width: min(var(--portfolio-content-width), calc(100% - 2 * var(--portfolio-side-gutter)));
+  max-width: var(--portfolio-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.aboutShowcase .aboutHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 26px;
+  margin-bottom: 30px !important;
+}
+
+.aboutShowcase .aboutHeaderRow .aboutPortraitFrame {
+  flex: 0 0 190px;
+  width: 190px;
+  min-width: 190px;
+  height: 190px;
+  margin: 0;
+  padding: 4px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.aboutShowcase .aboutHeaderRow .aboutPortrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 50%;
+}
+
+.aboutShowcase .aboutHeaderRow .aboutShowcaseHead {
+  margin: 0;
+  text-align: left;
+}
+
+.aboutShowcase .aboutHeaderRow .aboutSectionTitle {
+  margin: 0;
+  font-size: clamp(36px, 3.5vw, 53px);
+  line-height: 1.14;
+}
+
+.aboutShowcase .aboutShowcaseGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  column-gap: clamp(35px, 4vw, 60px);
+  align-items: start;
+  margin-top: 0;
+  padding: 0;
+}
+
+.aboutShowcase .aboutNarrative {
+  min-width: 0;
+}
+
+.aboutShowcase .aboutStatement {
+  margin: 0 0 23px;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.36;
+}
+
+.aboutShowcase .aboutNarrative p,
+.aboutShowcase .aboutNarrative p.aboutLead {
+  margin: 0 0 17px;
+  font-size: 15px;
+  line-height: 1.78;
+  color: #ded7e9;
+}
+
+/* Compact, even 2 by 2 cards, aligned with the intro headline. */
+.aboutShowcase .aboutExpertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 18px;
+  align-items: stretch;
+  align-content: start;
+  align-self: start;
+  justify-self: center;
+  width: 100%;
+  max-width: 490px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Preserve the actual React Bits layer/mask implementation.
+   Change only the material beneath it and soften interior color.
+   The use of rgba is intentional: the galaxy remains visible. */
+.aboutShowcase .aboutExpertiseCard.border-glow-card {
+  --card-bg: rgba(18, 15, 23, 0.62) !important;
+  --edge-sensitivity: 30;
+  --glow-padding: 40px;
+  --cone-spread: 25;
+  --fill-opacity: 0.12 !important;
+  position: relative;
+  min-width: 0;
+  min-height: 252px;
+  height: 100%;
+  border: 1px solid rgba(232, 218, 255, 0.18) !important;
+  border-radius: 28px !important;
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(14px) saturate(115%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(115%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 14px 32px rgba(0,0,0,.2) !important;
+}
+
+.aboutShowcase .aboutExpertiseCard.border-glow-card:hover {
+  background: var(--card-bg) !important;
+  border-color: rgba(232, 218, 255, 0.18) !important;
+}
+
+/* The original component's own hover/edge-proximity opacity
+   calculation stays in BorderGlow.css. Do not override its layers. */
+.aboutShowcase .aboutExpertiseCard .border-glow-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+  height: 100%;
+  padding: 24px 21px !important;
+  overflow: visible;
+  background: transparent !important;
+}
+
+.aboutShowcase .aboutExpertiseIcon {
+  flex-shrink: 0;
+  width: 29px;
+  height: 29px;
+  margin: 0 0 20px;
+  color: #c9a6ff;
+}
+
+.aboutShowcase .aboutExpertiseCard h3 {
+  margin: 0 0 11px;
+  min-height: 2.8em;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #faf5ff;
+}
+
+.aboutShowcase .aboutExpertiseCard p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.67;
+  color: #bcb2cb;
+}
+
+/* Anchor navigation clears the floating navbar. */
+#about { scroll-margin-top: 100px; }
+
+@media (min-width: 1101px) {
+  .navShell:not(.navCompact) { width: min(1200px, calc(100vw - 48px)); }
+  .navShell.navCompact { width: min(800px, calc(100vw - 48px)); }
+}
+
+@media (max-width: 1070px) {
+  .site main > .aboutShowcase.section { padding-top: 92px; padding-bottom: 82px; }
+  .aboutShowcase .aboutShowcaseGrid { grid-template-columns: minmax(0,1fr); row-gap: 34px; }
+  .aboutShowcase .aboutExpertiseGrid { max-width: 540px; justify-self: center; }
+  .aboutShowcase .aboutExpertiseCard.border-glow-card { min-height: 228px; }
+}
+
+@media (max-width: 700px) {
+  :root { --portfolio-side-gutter: 19px; }
+  .site main > .aboutShowcase.section { padding-top: 76px; padding-bottom: 72px; }
+  .aboutShowcase .aboutHeaderRow { gap: 16px; margin-bottom: 28px !important; }
+  .aboutShowcase .aboutHeaderRow .aboutPortraitFrame { flex-basis: 120px; width: 120px; min-width: 120px; height: 120px; }
+  .aboutShowcase .aboutHeaderRow .aboutSectionTitle { font-size: clamp(33px, 8vw, 44px); }
+  .aboutShowcase .aboutExpertiseGrid { gap: 12px; }
+  .aboutShowcase .aboutExpertiseCard.border-glow-card { min-height: 235px; }
+  .aboutShowcase .aboutExpertiseCard .border-glow-inner { padding: 19px 15px !important; }
+  .aboutShowcase .aboutExpertiseCard h3 { min-height: 0; font-size: 13px; }
+  .aboutShowcase .aboutExpertiseCard p { font-size: 11px; }
+  .aboutShowcase .aboutExpertiseIcon { margin-bottom: 16px; }
+}
+
+@media (max-width: 380px) {
+  .aboutShowcase .aboutExpertiseGrid { grid-template-columns: 1fr; }
+  .aboutShowcase .aboutExpertiseCard.border-glow-card { min-height: 0; }
+}
+
+/* ============================================================
+   ABOUT ME — EXPERTISE CARDS LEVEL WITH THE PORTRAIT / TITLE
+   Move only the desktop card grid upward beside the header.
+   Keep the original mobile/tablet vertical layout unchanged.
+   ============================================================ */
+@media (min-width: 1071px) {
+  .aboutShowcase .aboutShowcaseGrid {
+    align-items: start;
+  }
+
+  .aboutShowcase .aboutExpertiseGrid {
+    position: relative;
+    top: -195px;
+    margin-bottom: -195px;
+  }
+}
+
+/* ============================================================
+   ABOUT CLICK VIEW — COMFORTABLE NAV CLEARANCE + FULL GALAXY
+   Full original stylesheet retained; only final navigation/view
+   values are consolidated here. All card effects stay unchanged.
+   ============================================================ */
+@media (min-width: 1071px) {
+  html { scroll-padding-top: 0; }
+
+  /* When About is clicked, position its section below the navbar. */
+  #about,
+  .aboutShowcase#about {
+    scroll-margin-top: 90px;
+  }
+
+  /* The top of the portrait is now comfortably below navigation. */
+  .site main > .aboutShowcase.section {
+    min-height: 100svh;
+    padding-top: 20px;
+    padding-bottom: 64px;
+  }
+
+  /* Fit the portrait, text and buttons without unnecessary gaps. */
+  .aboutShowcase .aboutHeaderRow {
+    margin-bottom: 22px !important;
+  }
+  .aboutShowcase .aboutStatement {
+    margin-bottom: 17px;
+  }
+  .aboutShowcase .aboutNarrative p,
+  .aboutShowcase .aboutNarrative p.aboutLead {
+    margin-bottom: 13px;
+    line-height: 1.69;
+  }
+  .aboutShowcase .aboutActions { margin-top: 20px; }
+}
+
+/* Ensure the galaxy fills the entire About section, even below
+   the buttons, instead of ending early with a dark horizontal strip. */
+.site main > .aboutShowcase.section {
+  background-color: #0b071e;
+}
+.aboutShowcase.section::before {
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.aboutShowcase.section::after {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+/* Smaller screens: retain natural scrolling and a covered background. */
+@media (max-width: 1070px) {
+  #about, .aboutShowcase#about { scroll-margin-top: 108px; }
+  .site main > .aboutShowcase.section {
+    min-height: 100svh;
+  }
+}
+
+/* ============================================================
+   SBM LOGO -> HOME ANCHOR FIX
+   The fixed navbar is compensated by .site { padding-top:78px }.
+   Without an equivalent scroll margin, #home scrolls 78px down,
+   clipping the hero and revealing the start of About at the bottom.
+   ============================================================ */
+#home,
+section.hero#home {
+  scroll-margin-top: 78px;
+}
+
+/* Home occupies the visible viewport at the top of the document. */
+@media (min-width: 701px) {
+  .site main > .hero#home,
+  .site > main > .hero#home {
+    box-sizing: border-box;
+    height: calc(100svh - 78px);
+    min-height: 650px;
+  }
+}
+
+/* ============================================================
+   ONE CONTINUOUS GALAXY ACROSS THE ENTIRE PORTFOLIO
+   A single fixed nebula sits behind Hero, About and all sections.
+   Removing section-specific copies prevents visible horizontal seams.
+   ============================================================ */
+.site {
+  position: relative;
+  isolation: isolate;
+  background: #08051d !important;
+}
+
+/* One continuous, slightly zoomed-out purple nebula across the site. */
+.site::before {
+  content: "";
+  position: fixed;
+  inset: -5%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgba(16, 5, 35, .28), rgba(18, 6, 40, .31) 50%, rgba(16, 5, 35, .28)),
+    url('/galaxy-nebula.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  filter: brightness(1.04) saturate(1.12) contrast(1.03);
+  transform-origin: center;
+  will-change: transform;
+  animation: continuousGalaxyDrift 26s ease-in-out infinite alternate !important;
+}
+
+/* Gentle movement without zooming far into the nebula. */
+@keyframes continuousGalaxyDrift {
+  0%   { transform: translate3d(-1.1%, .5%, 0) scale(1.025); }
+  50%  { transform: translate3d(.7%, -1%, 0) scale(1.055); }
+  100% { transform: translate3d(1.15%, .6%, 0) scale(1.03); }
+}
+
+/* The old Hero nebula and veil restarted at a fixed height.
+   Retain bright stars and dust, which are transparent overlays. */
+.site .galaxyLayer .nebulaImage,
+.site .galaxyLayer .nebulaVeil {
+  display: none !important;
+}
+
+.site .galaxyLayer {
+  background: transparent !important;
+}
+
+/* About no longer draws its own independent nebula or dark panel. */
+.site main > .aboutShowcase.section,
+.site .aboutShowcase.section {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-top: 0 !important;
+}
+
+.site .aboutShowcase.section::before {
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+/* Keep the faint About twinkling stars, not a second nebula. */
+.site .aboutShowcase.section::after {
+  background-color: transparent !important;
+}
+
+/* Other sections sit on the same universe background. */
+.site main > .section:not(.aboutShowcase),
+.site main > .contactBlock,
+.site > footer,
+.site main > footer {
+  background-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site::before { animation: none !important; }
+}
+
+/* Remove the faint horizontal section-divider lines.
+   The continuous galaxy remains uninterrupted across the page. */
+.site main > .section,
+.site main > .aboutShowcase.section,
+.site main > .hero,
+.site main > .contactBlock,
+.site > footer,
+.site main > footer {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* About Me: gentle 12px lift, with enough navigation clearance. */
+@media (min-width: 1071px) {
+  .aboutShowcase .aboutHeaderRow,
+  .aboutShowcase .aboutShowcaseGrid {
+    transform: translateY(-12px) !important;
+  }
+}
+
+/* ============================================================
+   REQUESTED UPDATE: ABOUT HEADLINE GRADIENT
+   Matches the existing "Welcome to my portfolio" animation.
+   Do not change the galaxy, section positions, or navbar widths.
+   ============================================================ */
+.aboutShowcase .aboutStatement,
+.aboutShowcase .aboutStatement em {
+  color: transparent;
+  background-image: linear-gradient(
+    105deg,
+    #f4f0ff,
+    #d2b8fa 20%,
+    #efa5e6 40%,
+    #c4aaff 60%,
+    #f7f2ff 80%,
+    #d2b8fa
+  );
+  background-size: 240% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 12s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aboutShowcase .aboutStatement,
+  .aboutShowcase .aboutStatement em { animation: none !important; }
+}
+
+/* ============================================================
+   SHARED SPECULAR CTAS — Hero, About, and Contact only.
+   Does not modify the navbar, galaxy, or expertise cards.
+   ============================================================ */
+.specularButton {
+  --light-x: 50%;
+  --light-y: 50%;
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 49px;
+  padding: 13px 21px;
+  overflow: hidden;
+  border: 1px solid rgba(216, 185, 255, 0.76);
+  border-radius: 999px;
+  background: linear-gradient(115deg, #c5a0fc, #b7a3fa, #d2aeff);
+  color: #20142e;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(147, 91, 223, 0.12);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.specularButton .specularShine {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle 115px at var(--light-x) var(--light-y),
+    rgba(255,255,255,.72) 0%, rgba(255,255,255,.20) 40%, transparent 75%
+  );
+  transition: opacity .22s ease;
+}
+.specularButton:hover .specularShine,
+.specularButton:focus-visible .specularShine { opacity: 1; }
+.specularButton .specularContent {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.specularButton:hover { transform: translateY(-2px); box-shadow: 0 9px 26px rgba(168,113,226,.20); }
+.specularButton--outline {
+  border-color: rgba(195,167,240,.5);
+  color: #efe6ff;
+  background: rgba(18,12,36,.45);
+  box-shadow: 0 4px 18px rgba(10,5,22,.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.specularButton--outline .specularShine {
+  background: radial-gradient(
+    circle 125px at var(--light-x) var(--light-y),
+    rgba(206,174,255,.37), rgba(177,130,241,.12) 49%, transparent 75%
+  );
+}
+.specularButton--outline:hover { border-color: rgba(220,193,255,.72); box-shadow: 0 8px 25px rgba(45,21,75,.18); }
+.aboutShowcase .aboutActions .specularButton {
+  min-height: 47px;
+  margin: 0;
+  padding: 13px 19px;
+  font-size: 13px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .specularButton { transition: none !important; }
+  .specularButton:hover { transform: none; }
+  .specularButton .specularShine { transition: none; }
+}
+
+/* Skills heading only: reuse the existing MaskedName reveal and tighten top spacing. */
+.skills .skillsHeadline {
+  margin: 24px 0 0;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.17;
+}
+.skills .techLoopSection {
+  margin-top: clamp(30px, 4vw, 48px);
+}
+@media (max-width: 700px) {
+  .skills .skillsHeadline { margin-top: 20px; }
+}
+
+/* Skills Explorer: additions scoped to the Skills section only. */
+.skills .skillsExplorer {
+  margin-top: clamp(32px, 4vw, 52px);
+  padding-bottom: 12px;
+}
+.skills .skillsExplorerHeader { text-align: center; margin-bottom: 23px; }
+.skills .skillsExplorerHeader h3 {
+  margin: 0 0 9px;
+  color: #f7f1ff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(24px, 2.7vw, 34px);
+  font-weight: 750;
+  letter-spacing: -.045em;
+}
+.skills .skillsExplorerHeader p {
+  margin: 0;
+  color: #b9aacb;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.skills .skillFilterBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto 30px;
+}
+.skills .skillFilterButton {
+  padding: 11px 18px;
+  border: 1px solid rgba(192, 163, 241, .30);
+  border-radius: 999px;
+  background: rgba(18, 13, 38, .71);
+  color: #e4d8f6;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background .22s ease, border-color .22s ease, transform .22s ease, color .22s ease;
+}
+.skills .skillFilterButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 169, 255, .65);
+  background: rgba(86, 55, 140, .46);
+}
+.skills .skillFilterButton.isActive {
+  border-color: rgba(213, 187, 255, .84);
+  background: linear-gradient(110deg, #c6abf9, #a98cf2);
+  color: #1b1030;
+  box-shadow: 0 5px 22px rgba(171, 127, 236, .22);
+}
+.skills .skillFilterButton:focus-visible { outline: 2px solid #e0caff; outline-offset: 4px; }
+.skills .skillTiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  align-items: stretch;
+}
+.skills .skillTile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  min-height: 82px;
+  padding: 15px 16px;
+  border: 1px solid rgba(195, 165, 241, .20);
+  border-radius: 18px;
+  background: rgba(18, 13, 35, .60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+  animation: skillTileReveal .36s cubic-bezier(.2,.7,.2,1) both;
+  animation-delay: calc(min(var(--skill-index), 12) * 34ms);
+  transition: border-color .22s ease, background .22s ease, transform .22s ease, box-shadow .22s ease;
+}
+.skills .skillTile:hover {
+  border-color: rgba(204, 172, 255, .60);
+  background: rgba(39, 26, 68, .72);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(8, 4, 23, .24);
+}
+.skills .skillTileIcon {
+  flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255,255,255,.065);
+}
+.skills .skillTileIcon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  transition: transform .24s ease;
+}
+.skills .skillTile:hover .skillTileIcon img { transform: translateY(-3px) scale(1.07); }
+.skills .skillTileCopy { display: flex; flex-direction: column; min-width: 0; gap: 5px; }
+.skills .skillTileCopy strong {
+  color: #f8f4ff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+.skills .skillTileCopy small { color: #afa1c4; font-size: 11px; line-height: 1.3; }
+@keyframes skillTileReveal {
+  from { opacity: 0; transform: translateY(11px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 950px) {
+  .skills .skillTiles { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media (max-width: 680px) {
+  .skills .skillFilterBar { justify-content: flex-start; gap: 8px; }
+  .skills .skillFilterButton { padding: 10px 13px; font-size: 12px; }
+  .skills .skillTiles { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .skills .skillTile { gap: 9px; padding: 11px; min-height: 74px; border-radius: 15px; }
+  .skills .skillTileIcon { flex-basis: 39px; width: 39px; height: 39px; border-radius: 11px; }
+  .skills .skillTileIcon img { width: 29px; height: 29px; }
+  .skills .skillTileCopy strong { font-size: 12px; }
+  .skills .skillTileCopy small { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills .skillTile { animation: none !important; }
+  .skills .skillFilterButton, .skills .skillTile, .skills .skillTileIcon img { transition: none !important; }
+  .skills .skillTile:hover { transform: none; }
+}
+
+/* Text monograms for generic technical skills without official product logos. */
+.skillTileTextIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #365d98, #6856ab);
+  color: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+
+/* =============================================================
+   SKILLS ONLY — COMPACT ANIMATED LIST
+   Replaces the old four-column Skills Explorer tile grid.
+   All other portfolio styles remain unchanged.
+   ============================================================= */
+.skills .skillsAnimatedList {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 8px;
+  border: 1px solid rgba(206, 176, 255, .22);
+  border-radius: 23px;
+  background: rgba(13, 8, 32, .42);
+  box-shadow: 0 14px 44px rgba(6, 3, 25, .20);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.skills .skillsAnimatedScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 420px;
+  padding: 5px 6px 5px 5px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(189, 151, 247, .48) transparent;
+}
+.skills .skillsAnimatedScroll::-webkit-scrollbar { width: 6px; }
+.skills .skillsAnimatedScroll::-webkit-scrollbar-thumb { background: rgba(189,151,247,.48); border-radius: 999px; }
+.skills .skillsAnimatedRow {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-height: 68px;
+  padding: 10px 17px;
+  border: 1px solid rgba(205, 173, 255, .12);
+  border-radius: 15px;
+  background: rgba(31, 21, 54, .64);
+  animation: skillsListIn .4s cubic-bezier(.16, 1, .3, 1) both;
+  animation-delay: calc(min(var(--skill-index), 9) * 45ms);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.skills .skillsAnimatedRow:hover {
+  transform: translateX(5px);
+  border-color: rgba(203, 168, 255, .56);
+  background: rgba(57, 35, 94, .70);
+}
+.skills .skillsAnimatedIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: rgba(236, 216, 255, .07);
+}
+.skills .skillsAnimatedIcon img { width: 34px; height: 34px; object-fit: contain; }
+.skills .skillsAnimatedName {
+  min-width: 0;
+  flex: 1;
+  color: #f7f1ff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 650;
+}
+.skills .skillsAnimatedCategory { color: #baa9d0; font-size: 11px; white-space: nowrap; }
+.skills .skillsAnimatedSpark { padding-left: 5px; color: #bfa4f7; font-size: 20px; }
+.skills .skillsAnimatedHint { margin: 14px auto 0; color: #b6a7ca; text-align: center; font-size: 12px; }
+@keyframes skillsListIn {
+  from { opacity: 0; transform: translateY(11px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 650px) {
+  .skills .skillsAnimatedScroll { max-height: 350px; }
+  .skills .skillsAnimatedRow { gap: 11px; min-height: 62px; padding: 9px 11px; }
+  .skills .skillsAnimatedIcon { width: 39px; height: 39px; flex-basis: 39px; }
+  .skills .skillsAnimatedIcon img { width: 29px; height: 29px; }
+  .skills .skillsAnimatedName { font-size: 13px; }
+  .skills .skillsAnimatedCategory { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills .skillsAnimatedRow { animation: none !important; transition: none !important; }
+  .skills .skillsAnimatedRow:hover { transform: none; }
+}
+
+/* ============================================================
+   SKILLS ONLY — REACT BITS ANIMATED LIST MOTION
+   Scroll-based 0.7→1 scale/fade, shared-layout selection highlight,
+   keyboard navigation, and live top/bottom gradient fades.
+   All styles scoped to Skills; other sections remain untouched.
+   ============================================================ */
+.skills .rbSkillsWrap {
+  position: relative;
+  width: min(100%, 600px);
+  margin: 0 auto;
+  isolation: isolate;
+}
+.skills .rbSkillsScroll {
+  position: relative;
+  max-height: 405px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 13px;
+  scrollbar-width: none;
+  overscroll-behavior: contain;
+  outline-offset: 4px;
+}
+.skills .rbSkillsScroll::-webkit-scrollbar { display: none; }
+.skills .rbSkillItem { position: relative; margin-bottom: 14px; }
+.skills .rbSkillItem:last-child { margin-bottom: 0; }
+.skills .rbSkillRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  min-height: 76px;
+  gap: 16px;
+  padding: 13px 19px;
+  border: 1px solid rgba(201, 174, 242, .19);
+  border-radius: 13px;
+  color: #f7f3ff;
+  background: rgba(18, 13, 35, .82);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .2s ease;
+}
+.skills .rbSkillRow:hover,
+.skills .rbSkillRow.isSelected { border-color: rgba(198, 164, 255, .55); }
+.skills .rbSkillSelection {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: rgba(115, 80, 171, .32);
+  pointer-events: none;
+}
+.skills .rbSkillLogo,
+.skills .rbSkillText { position: relative; z-index: 1; }
+.skills .rbSkillLogo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  border-radius: 11px;
+  background: rgba(238, 219, 255, .065);
+}
+.skills .rbSkillLogo img { width: 34px; height: 34px; object-fit: contain; }
+.skills .rbSkillText { display: flex; flex-direction: column; gap: 5px; }
+.skills .rbSkillText strong { font: 700 15px "Plus Jakarta Sans", sans-serif; color: #fcf9ff; }
+.skills .rbSkillText small { font-size: 11px; color: #b9aace; }
+.skills .rbSkillFade { position: absolute; left: 0; right: 0; z-index: 3; pointer-events: none; transition: opacity .3s ease; }
+.skills .rbSkillFadeTop { top: 0; height: 48px; background: linear-gradient(to bottom, #130b2c, transparent); }
+.skills .rbSkillFadeBottom { bottom: 0; height: 85px; background: linear-gradient(to top, #130b2c, transparent); }
+.skills .rbSkillHint { margin: 13px 0 0; color: #b7a5cd; font-size: 12px; text-align: center; }
+@media (max-width: 600px) {
+  .skills .rbSkillsScroll { max-height: 360px; padding: 12px 5px; }
+  .skills .rbSkillRow { min-height: 67px; padding: 10px 13px; gap: 12px; }
+  .skills .rbSkillText strong { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills .rbSkillRow { transition: none; }
+  .skills .rbSkillFade { transition: none; }
+}
+
+/* ============================================================
+   SKILLS ONLY — REMOVE DARK ANIMATED-LIST PANEL
+   Keep the individual cards and Motion interactions unchanged.
+   The dark rectangle came from the solid-color fade overlays.
+   ============================================================ */
+#expertise .rbSkillsWrap,
+#expertise .rbSkillsScroll {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: 0;
+}
+
+#expertise .rbSkillFadeTop,
+#expertise .rbSkillFadeBottom {
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+}
+
+/* SKILLS ONLY — Slightly smaller heading and higher section placement.
+   Hero, About, navigation, galaxy and other sections remain unchanged. */
+.site main > section.skills#expertise {
+  padding-top: 52px;
+}
+#expertise.skills h2.skillsHeadline {
+  font-size: clamp(46px, 5.1vw, 68px);
+  line-height: 1.17;
+}
+@media (max-width: 700px) {
+  .site main > section.skills#expertise { padding-top: 44px; }
+  #expertise.skills h2.skillsHeadline { font-size: clamp(34px, 7.8vw, 46px); }
+}
+
+
+/* SKILLS ONLY — Gooey Splash category selector. Main nav remains unchanged. */
+#expertise .skillFilterBar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 9px 0 22px;
+  overflow: visible;
+}
+#expertise .skillsGooeyNav { width: 100%; max-width: 1090px; }
+#expertise .skillsGooeyNav .gooey-nav-list {
+  width: 100%;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#expertise .skillsGooeyNav .gooey-nav-link {
+  padding: 11px 16px;
+  font-size: 12px;
+  font-weight: 650;
+  color: #d7cbe9;
+  background: rgba(23, 14, 44, .28);
+  border: 1px solid rgba(185, 159, 230, .18);
+}
+#expertise .skillsGooeyNav .gooey-nav-link.is-active { color: #fffaff; }
+#expertise .skillsGooeyNav .gooey-active-pill {
+  background: linear-gradient(135deg, rgba(191,153,255,.3), rgba(108,62,190,.22));
+  box-shadow: 0 0 19px rgba(162,111,255,.2), inset 0 1px rgba(255,255,255,.12);
+}
+@media(max-width:700px) {
+  #expertise .skillsGooeyNav .gooey-nav-list { gap: 5px; }
+  #expertise .skillsGooeyNav .gooey-nav-link { padding: 9px 11px; font-size: 11px; }
+}
+
+/* ============================================================
+   PILL NAV — both navs (replaces Gooey particle effects)
+   Preserve the existing floating navbar dimensions and Skills.
+   ============================================================ */
+.navPillWrap { overflow: visible; }
+.navPillWrap .pill-nav { max-width: 100%; }
+.navPillWrap .pill-nav-list { flex-wrap: nowrap; }
+#expertise .skillFilterBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 9px 0 22px;
+  overflow: visible;
+}
+#expertise .skillsPillNav { max-width: 1090px; width: 100%; }
+#expertise .skillsPillNav .pill-nav-list {
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+#expertise .skillsPillNav .pill-nav-link {
+  padding: 11px 16px;
+  font-size: 12px;
+  font-weight: 650;
+  border-color: rgba(196,169,237,.22);
+  background: rgba(23,14,44,.30);
+}
+#expertise .skillsPillNav .pill-nav-link.is-active {
+  border-color: rgba(197,159,255,.55);
+}
+@media (min-width:1101px) {
+  .navShell:not(.navCompact) { width: min(1200px, calc(100vw - 48px)); }
+  .navShell.navCompact { width: min(800px, calc(100vw - 48px)); }
+}
+@media (min-width:901px) and (max-width:1100px) {
+  .navPillWrap .pill-nav-link { font-size: 13px; padding: 9px 7px; }
+}
+@media (max-width:900px) {
+  .navPillWrap .pill-nav-list { flex-wrap: wrap; }
+}
+@media (max-width:700px) {
+  #expertise .skillsPillNav .pill-nav-list { gap: 6px; }
+  #expertise .skillsPillNav .pill-nav-link { font-size: 11px; padding: 9px 11px; }
+}
+
+/* ============================================================
+   REFINED NAV — centered type, no dots, understated violet glass.
+   Keep locked desktop widths and all existing interactions.
+   ============================================================ */
+.navShell, .navShell.navCompact {
+  isolation: isolate;
+  background: linear-gradient(118deg,
+    rgba(37, 26, 70, .52) 0%,
+    rgba(22, 15, 48, .43) 42%,
+    rgba(31, 20, 63, .50) 100%);
+  border: 1px solid rgba(218, 196, 255, .23);
+  box-shadow: 0 15px 42px rgba(5, 2, 22, .27),
+    inset 0 1px 0 rgba(255, 255, 255, .11),
+    inset 0 -1px 0 rgba(185, 148, 244, .075);
+  backdrop-filter: blur(24px) saturate(145%);
+  -webkit-backdrop-filter: blur(24px) saturate(145%);
+}
+/* A soft glass reflection within the existing shell. */
+.navShell::before {
+  content: "";
+  position: absolute;
+  inset: 1px 2px auto;
+  height: 48%;
+  border-radius: 999px 999px 50% 50%;
+  background: linear-gradient(180deg, rgba(244,235,255,.065), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+.navPillWrap { align-items: center; justify-content: center; }
+.navPillWrap .pill-nav,
+.navPillWrap .pill-nav-list { margin-inline: auto; }
+.navPillWrap .pill-nav-list { padding-bottom: 0; align-items: center; }
+.navPillWrap .pill-nav-link { text-align: center; }
+.navPillWrap .pill-nav-label { text-align: center; }
+/* Preserve visual hierarchy: small, subtle selected state. */
+.navPillWrap .pill-nav-link.is-active {
+  border-color: rgba(205, 169, 251, .32);
+  background: rgba(174, 129, 232, .085);
+}
+#expertise .skillsPillNav .pill-nav-list { padding-bottom: 0; }
+#expertise .skillsPillNav .pill-nav-link { text-align: center; }
+#expertise .skillsPillNav .pill-nav-link.is-active { background: rgba(183,142,247,.13); }
+@media (min-width:1101px) {
+  .navShell:not(.navCompact) { width: min(1200px, calc(100vw - 48px)); }
+  .navShell.navCompact { width: min(800px, calc(100vw - 48px)); }
+}
+
+/* SKILLS TYPOGRAPHY AND VERTICAL POSITION — scoped, final.
+   0.45 CSS inches is ~43px. 52px - 43px = 9px. */
+@media (min-width: 701px) {
+  .site main > section#expertise.skills { padding-top: 9px; }
+}
+/* Skills heading uses the same base .maskWordTexture as About Me. */
+#expertise.skills .skillsExplorerHeader h3 {
+  background-image: linear-gradient(105deg, #efd2ff 0%, #d8affb 50%, #c1a0ef 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================================
+   NAVIGATION SPECULAR LIGHT — scoped to the main navbar only.
+   The original Pill Nav fill, rolling text, glass frame and widths
+   remain unchanged. Mouse position is set by the link elements.
+   ============================================================ */
+.navPillWrap .pill-nav-link {
+  --specular-x: 50%;
+  --specular-y: 50%;
+}
+.navPillWrap .pill-nav-specular {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: radial-gradient(ellipse 68px 44px at var(--specular-x) var(--specular-y),
+    rgba(255, 255, 255, .22) 0%,
+    rgba(220, 193, 255, .12) 34%,
+    transparent 100%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+.navPillWrap .pill-nav-link:is(:hover, :focus-visible) .pill-nav-specular {
+  opacity: 1;
+}
+.navPillWrap .pill-nav-link:is(:hover, :focus-visible) {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25),
+    inset 0 -1px 0 rgba(193,161,242,.17),
+    0 0 15px rgba(170,128,221,.10);
+}
+.navShell .navGithub {
+  --specular-x: 50%;
+  --specular-y: 50%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.navShell .navGithub::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse 90px 52px at var(--specular-x) var(--specular-y),
+    rgba(170,129,224,.30), rgba(214,191,248,.12) 44%, transparent 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+.navShell .navGithub:is(:hover, :focus-visible)::before { opacity: 1; }
+.navShell .navGithub:is(:hover, :focus-visible) {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.13),
+    0 0 18px rgba(162,123,216,.16);
+}
+@media (prefers-reduced-motion: reduce) {
+  .navPillWrap .pill-nav-specular,
+  .navShell .navGithub::before { transition: none !important; }
+}
+
+/* Center the existing Skills masked heading without changing its font size. */
+#expertise.skills h2.skillsHeadline {
+  text-align: center;
+  width: 100%;
+}
+
+/* ============================================================
+   FINAL GALAXY REFINEMENT — same image and movement, gentler glow.
+   Only the nebula image and About background are slightly dimmed.
+   ============================================================ */
+.site .galaxyLayer .nebulaImage {
+  filter: saturate(1.03) contrast(1.01) brightness(.92) !important;
+}
+.site main > .aboutShowcase.section::before {
+  filter: saturate(1.01) contrast(1.02) brightness(.92) !important;
+}
+
+/* ============================================================
+   FLOATING ASSISTANT — ICON ONLY (no speaker or purple bubble)
+   This overrides the earlier .chatLaunchButton styles.
+   ============================================================ */
+.buddyRow .chatLaunchButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #e0c7ff;
+  cursor: pointer;
+  transition: color .25s ease, transform .25s ease;
+}
+.buddyRow .chatLaunchButton svg {
+  display: block;
+  filter: drop-shadow(0 0 5px rgba(205,157,255,.72))
+          drop-shadow(0 0 13px rgba(168,104,235,.34));
+  transition: transform .25s ease, filter .25s ease;
+}
+.buddyRow .chatLaunchButton:hover {
+  color: #f9efff;
+  border: 0;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  transform: none;
+}
+.buddyRow .chatLaunchButton:hover svg {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 7px rgba(224,188,255,.85))
+          drop-shadow(0 0 17px rgba(184,126,252,.46));
+}
+.buddyRow .chatLaunchButton:focus-visible {
+  outline: 2px solid #dbc3ff;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .buddyRow .chatLaunchButton,
+  .buddyRow .chatLaunchButton svg { transition: none; }
+  .buddyRow .chatLaunchButton:hover svg { transform: none; }
+}
+
+
+/* Tiny label beside the floating snowflake — no box or background. */
+.buddyRow .assistantTinyLabel {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #e2d1f5;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-shadow: 0 0 9px rgba(187,139,255,.4);
+  pointer-events: none;
+}
+.buddyRow { gap: 9px; }
+@media (max-width: 480px) {
+  .buddyRow .assistantTinyLabel {
+    max-width: 155px;
+    font-size: 9px;
+    text-align: right;
+    white-space: normal;
+  }
+}
+
+/* PROJECTS NAV CLICK — align the heading and cards higher, as in reference image 2.
+   Only changes where #projects lands after navbar navigation; no layout redesign. */
+@media (min-width: 901px) {
+  #projects.sbnew-section,
+  #projects {
+    scroll-margin-top: 45px;
+  }
+}

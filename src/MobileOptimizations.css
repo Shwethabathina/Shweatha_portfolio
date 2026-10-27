@@ -1,0 +1,217 @@
+/* =============================================================
+   SHWEATHA PORTFOLIO — MOBILE-ONLY REFINEMENTS
+   Desktop remains untouched; loaded after style.css.
+   No animation, component, or interaction logic is replaced.
+   ============================================================= */
+
+@media (max-width: 900px) {
+  /* Avoid long headings, images and interactive panels stretching the page. */
+  html, body, #root { width: 100%; min-width: 0; }
+  .site { max-width: 100%; overflow-x: clip; }
+  .site main { min-width: 0; }
+  .site main > .section:not(.aboutShowcase),
+  .site main > .contactBlock {
+    width: calc(100% - 40px);
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+  .site main > .aboutShowcase.section {
+    width: 100%;
+    max-width: none;
+  }
+  .site main > .aboutShowcase.section > .aboutHeaderRow,
+  .site main > .aboutShowcase.section > .aboutShowcaseGrid {
+    width: calc(100% - 40px);
+    max-width: none;
+    margin-inline: auto;
+  }
+  .hero, .heroContent, .heroText, .heroPortraitColumn,
+  .aboutShowcaseGrid, .aboutNarrative, .aboutExpertiseGrid,
+  .skillsExplorer, .rbSkillsWrap, .rbSkillsScroll {
+    min-width: 0;
+  }
+  .heroName, .heroWelcome, .aboutStatement,
+  .aboutNarrative p, .section h2, .skillsExplorer h3 {
+    overflow-wrap: anywhere;
+  }
+
+  /* Existing nav hamburger and assistant keep their event handlers. */
+  .navShell, .navShell.navCompact {
+    grid-template-columns: minmax(0, 1fr) auto;
+    width: calc(100vw - 24px);
+    max-width: none;
+    padding-inline: 14px;
+  }
+  .navGooeyWrap.open {
+    width: 100%;
+    max-height: min(72svh, 530px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .navGooeyWrap.open .pill-nav,
+  .navGooeyWrap.open .pill-nav-list {
+    max-width: 100%;
+  }
+  .navGooeyWrap.open .pill-nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .navMonogram { min-width: 0; }
+  .navGithub { max-width: 125px; }
+
+  /* The existing hero uses desktop grid; stack without changing the avatar. */
+  .site main > .hero {
+    height: auto;
+    min-height: 0;
+    padding-top: 38px;
+    padding-bottom: 54px;
+  }
+  .site main > .hero .heroContent {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    margin: 0;
+  }
+  .heroText { order: 1; }
+  .heroPortraitColumn { order: 2; gap: 17px; }
+  .heroName { font-size: clamp(30px, 5.2vw, 46px); line-height: 1.25; }
+  .heroWelcome { font-size: clamp(24px, 4.7vw, 35px); }
+  .heroQuote { max-width: 100%; }
+  .heroPortraitColumn .electricMemojiShell {
+    width: min(290px, 74vw);
+    max-width: 100%;
+    margin-inline: auto;
+  }
+  .heroPortraitColumn .memojiScrollCue {
+    position: static;
+    margin: 0;
+    width: auto;
+  }
+
+  /* About layout: narrative followed by 2 columns of expertise cards. */
+  .aboutShowcase .aboutShowcaseGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .aboutShowcase .aboutExpertiseGrid {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .aboutShowcase .aboutExpertiseCard { min-width: 0; }
+  .aboutShowcase .aboutExpertiseCard p { overflow-wrap: anywhere; }
+
+  /* Skills filter may wrap rather than extending beyond the screen. */
+  #expertise .skillFilterBar,
+  #expertise .skillsPillNav { width: 100%; max-width: 100%; }
+  #expertise .skillsPillNav .pill-nav-list {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+  }
+  .skills .rbSkillsWrap,
+  .skills .rbSkillsScroll { max-width: 100%; }
+
+  /* Keep media inside sections rather than widening the viewport. */
+  .section img, .section video, .section canvas,
+  .contactBlock img, .contactBlock video {
+    max-width: 100%;
+  }
+  #experience, #education, #projects, #contact { scroll-margin-top: 90px; }
+}
+
+@media (max-width: 600px) {
+  :root { --portfolio-side-gutter: 18px; }
+
+  .site main > .section:not(.aboutShowcase),
+  .site main > .contactBlock,
+  .site main > .aboutShowcase.section > .aboutHeaderRow,
+  .site main > .aboutShowcase.section > .aboutShowcaseGrid {
+    width: calc(100% - 36px);
+  }
+  .site main > .hero {
+    padding-inline: 18px;
+    padding-top: 34px;
+    padding-bottom: 45px;
+  }
+  .heroName { font-size: clamp(29px, 8.4vw, 42px); }
+  .heroWelcome { font-size: clamp(23px, 6.6vw, 32px); }
+  .heroRole { font-size: 12px; line-height: 1.6; }
+  .heroQuote { margin-top: 27px; margin-bottom: 23px; }
+  .heroButtons { gap: 10px; }
+  .heroButtons .specularButton {
+    max-width: 100%;
+    white-space: normal;
+    min-height: 44px;
+  }
+  .heroButtons .specularContent { white-space: normal; }
+  .heroPortraitColumn .electricMemojiShell { width: min(265px, 73vw); }
+
+  .site main > .aboutShowcase.section {
+    padding-top: 45px;
+    padding-bottom: 66px;
+  }
+  .aboutShowcase .aboutHeaderRow { gap: 14px; margin-bottom: 28px !important; }
+  .aboutShowcase .aboutHeaderRow .aboutPortraitFrame {
+    flex: 0 0 92px;
+    width: 92px;
+    min-width: 92px;
+    height: 92px;
+  }
+  .aboutShowcase .aboutHeaderRow .aboutSectionTitle {
+    font-size: clamp(31px, 8.5vw, 43px);
+  }
+  .aboutShowcase .aboutStatement { font-size: clamp(20px, 5.7vw, 26px); }
+  .aboutShowcase .aboutNarrative p,
+  .aboutShowcase .aboutNarrative p.aboutLead { font-size: 14px; line-height: 1.72; }
+
+  .aboutShowcase .aboutExpertiseGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .aboutShowcase .aboutExpertiseCard.border-glow-card {
+    min-height: 0;
+    height: 100%;
+  }
+  .aboutShowcase .aboutExpertiseCard .border-glow-inner {
+    padding: 16px 12px !important;
+  }
+  .aboutShowcase .aboutExpertiseCard h3 { font-size: 12.5px; }
+  .aboutShowcase .aboutExpertiseCard p { font-size: 11px; line-height: 1.55; }
+  .aboutShowcase .aboutExpertiseIcon { width: 25px; height: 25px; margin-bottom: 12px; }
+
+  .site main > section.skills#expertise { padding-top: 45px; }
+  #expertise.skills h2.skillsHeadline { font-size: clamp(32px, 8vw, 45px); }
+  #expertise .skillsPillNav .pill-nav-link { padding: 9px 11px; font-size: 11px; }
+  .skills .rbSkillRow { min-height: 61px; }
+
+  .buddyDock { right: 12px; bottom: 12px; max-width: calc(100vw - 24px); }
+  .buddyPopover { max-width: calc(100vw - 24px); max-height: min(70svh, 510px); }
+  .buddyRow { max-width: 100%; }
+  .assistantTinyLabel { max-width: min(52vw, 230px); }
+  .vinylMusicButton, .musicNoteButton {
+    left: 12px;
+    bottom: 12px;
+  }
+  .site > footer { max-width: calc(100% - 36px); }
+}
+
+/* Very narrow phones: one readable About card per row. */
+@media (max-width: 380px) {
+  .aboutShowcase .aboutExpertiseGrid { grid-template-columns: minmax(0, 1fr); }
+  .aboutShowcase .aboutExpertiseCard .border-glow-inner { padding: 19px 18px !important; }
+  .aboutShowcase .aboutExpertiseCard h3 { font-size: 15px; }
+  .aboutShowcase .aboutExpertiseCard p { font-size: 12px; }
+  .heroButtons { flex-direction: column; align-items: stretch; }
+  .heroButtons .specularButton { width: 100%; }
+  .navGithub { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

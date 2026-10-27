@@ -1,0 +1,108 @@
+
+/* ============================================
+   FLOATING VINYL MUSIC CONTROL
+   No music player card, box, or volume slider
+============================================ */
+
+button.vinylMusicButton {
+  position: fixed;
+  left: 25px;
+  bottom: 25px;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 62px;
+  height: 62px;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+
+  color: #d8b4fe;
+  cursor: pointer;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    color 0.25s ease,
+    filter 0.25s ease;
+}
+
+/* Vinyl record symbol */
+
+button.vinylMusicButton svg {
+  display: block;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+
+  filter: drop-shadow(
+    0 0 8px rgba(187, 139, 255, 0.4)
+  );
+
+  transform-origin: center;
+}
+
+/* Spin only when music is playing */
+
+button.vinylMusicButton.isPlaying svg {
+  animation: vinylRecordSpin 3.5s linear infinite;
+}
+
+@keyframes vinylRecordSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hover effect */
+
+button.vinylMusicButton:hover {
+  color: #f0dcff;
+  filter: drop-shadow(
+    0 0 12px rgba(205, 165, 255, 0.5)
+  );
+}
+
+/* Keyboard accessibility */
+
+button.vinylMusicButton:focus-visible {
+  outline: 2px solid #d7b7ff;
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  button.vinylMusicButton {
+    left: 15px;
+    bottom: 15px;
+    width: 54px;
+    height: 54px;
+  }
+
+  button.vinylMusicButton svg {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  button.vinylMusicButton.isPlaying svg {
+    animation: none;
+  }
+}

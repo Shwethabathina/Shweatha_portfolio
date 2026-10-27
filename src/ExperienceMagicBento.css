@@ -1,0 +1,751 @@
+
+/* EXPERIENCE — ORIGINAL MAGIC BENTO + FROSTED GALAXY GLASS */
+
+#experience.experienceSection {
+  padding-top: 70px;
+  padding-bottom: 125px;
+  scroll-margin-top: 25px;
+}
+
+#experience .experienceIntro {
+  max-width: 720px;
+  margin: 24px 0 42px;
+  font-size: 15px;
+  line-height: 1.85;
+  color: #cabfdc;
+}
+
+#experience.experienceSection h2.experienceMaskedHeading {
+  width: 100%;
+  margin: 0 0 48px;
+  text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(46px, 5.1vw, 68px);
+  font-weight: 800;
+  letter-spacing: -.075em;
+  line-height: 1.17;
+}
+
+#experience .experienceMaskedHeading .maskedName,
+#experience .experienceMaskedHeading .maskWordTexture {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* ==========================================================
+   TIMELINE — SAME GEOMETRY
+   ========================================================== */
+
+.experienceMagicTimeline {
+  --experience-fill-progress: 0;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--experience-gap, 13px);
+  padding: 6px 0 0;
+  perspective: 1500px;
+}
+
+/* Faint background rail */
+
+#experience .experienceMagicTimeline::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 193px;
+  top: 35px;
+  bottom: 105px;
+  width: 2px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(190, 145, 255, .04) 0%,
+    rgba(175, 134, 231, .18) 12%,
+    rgba(175, 134, 231, .2) 85%,
+    rgba(190, 145, 255, .04) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* ==========================================================
+   NEW — SCROLL-FILLING LINE
+   Uses the same behavior as Education
+   ========================================================== */
+
+#experience .experienceMagicTimeline::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 193px;
+  top: 35px;
+  bottom: 105px;
+  width: 2px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    #ead5ff 0%,
+    #c8a3ff 30%,
+    #a986ea 60%,
+    #e4caff 100%
+  );
+
+  box-shadow:
+    0 0 7px rgba(194, 148, 255, .38),
+    0 0 14px rgba(173, 113, 242, .16);
+
+  transform:
+    scaleY(var(--experience-fill-progress));
+
+  transform-origin: top center;
+  pointer-events: none;
+  animation: none;
+}
+
+.experienceTimelineEntry {
+  display: grid;
+  grid-template-columns:
+    174px 38px minmax(0, 1fr);
+  align-items: start;
+  position: relative;
+}
+
+/* Dates — original alignment retained */
+
+#experience .experienceTimelineDate {
+  padding-top: 30px;
+  color: #d6c0f8;
+  text-align: right;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: .035em;
+}
+
+/* ==========================================================
+   TIMELINE NODES
+   ========================================================== */
+
+#experience .experienceTimelineNode {
+  position: relative;
+  z-index: 1;
+
+  width: 13px;
+  height: 13px;
+  margin: 34px auto 0;
+
+  border: 2px solid #bda0ee;
+  border-radius: 50%;
+  background: #221235;
+
+  box-shadow:
+    0 0 0 4px rgba(174, 126, 240, .1),
+    0 0 10px rgba(177, 130, 237, .15);
+
+  transition:
+    background .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    transform .35s ease;
+}
+
+/* Node brightens as the line reaches it */
+
+#experience
+.experienceTimelineEntry.experienceNodeReached
+.experienceTimelineNode {
+  background: #59337f;
+  border-color: #e8cfff;
+
+  box-shadow:
+    0 0 0 5px rgba(179, 126, 245, .15),
+    0 0 14px rgba(203, 151, 255, .4),
+    0 0 24px rgba(176, 111, 244, .18);
+}
+
+/* Original hover interaction */
+
+#experience
+.experienceTimelineEntry:hover
+.experienceTimelineNode,
+#experience
+.experienceTimelineEntry:focus-within
+.experienceTimelineNode {
+  background: #d1b4ff;
+  border-color: #eadbff;
+
+  box-shadow:
+    0 0 0 5px rgba(174, 126, 240, .14),
+    0 0 16px rgba(191, 146, 255, .38);
+
+  transform: scale(1.1);
+}
+
+/* ==========================================================
+   MAGIC BENTO — ORIGINAL INTERACTIONS
+   ========================================================== */
+
+.experienceMagicCard {
+  --magic-rotate-x: 0deg;
+  --magic-rotate-y: 0deg;
+  --magic-move-x: 0px;
+  --magic-move-y: 0px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: var(--experience-row-height, 215px);
+
+  border: 1px solid rgba(205, 175, 255, .2);
+  border-radius: 22px;
+  background: rgba(17, 12, 35, .66);
+
+  box-shadow:
+    0 17px 48px rgba(0, 0, 0, .16),
+    inset 0 1px 0 rgba(255, 255, 255, .035);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  transform:
+    perspective(1200px)
+    translate3d(
+      var(--magic-move-x),
+      var(--magic-move-y),
+      0
+    )
+    rotateX(var(--magic-rotate-x))
+    rotateY(var(--magic-rotate-y));
+
+  transition:
+    transform .3s cubic-bezier(.2, .8, .2, 1),
+    border-color .22s,
+    box-shadow .22s;
+
+  transform-style: preserve-3d;
+}
+
+.experienceMagicCard.isHovered,
+.experienceMagicCard:focus-visible {
+  border-color: rgba(199, 163, 255, .48);
+
+  box-shadow:
+    0 20px 55px rgba(39, 14, 81, .24),
+    0 0 20px rgba(164, 120, 226, .09);
+}
+
+.experienceMagicCard:focus-visible {
+  outline: 2px solid #cdb5ff;
+  outline-offset: 3px;
+}
+
+.experienceMagicGlow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+
+  transition: opacity .2s;
+
+  background: radial-gradient(
+    340px circle at
+    var(--magic-x, 50%)
+    var(--magic-y, 50%),
+    rgba(181, 123, 255, .17),
+    transparent 70%
+  );
+}
+
+.experienceMagicCard.isHovered
+.experienceMagicGlow {
+  opacity: 1;
+}
+
+.experienceMagicCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 4;
+
+  background: radial-gradient(
+    250px circle at
+    var(--magic-x, 50%)
+    var(--magic-y, 50%),
+    rgba(193, 157, 255, .7),
+    transparent 72%
+  ) border-box;
+
+  mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+.experienceMagicCard.isHovered::after {
+  opacity: 1;
+}
+
+.experienceMagicStars {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.experienceMagicStars span {
+  position: absolute;
+  border-radius: 50%;
+  background: #f4e4ff;
+
+  box-shadow:
+    0 0 9px 3px rgba(206, 160, 255, .45);
+
+  animation:
+    experienceMagicTwinkle
+    2.3s ease-in-out infinite alternate;
+}
+
+@keyframes experienceMagicTwinkle {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 9px, 0) scale(.5);
+  }
+
+  50% {
+    opacity: .95;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(7px, -12px, 0) scale(1.35);
+  }
+}
+
+/* ==========================================================
+   ORGANIZATION BANNERS — ORIGINAL COLORS
+   ========================================================== */
+
+.experienceBanner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  min-height: 147px;
+  padding: 26px 30px;
+  overflow: hidden;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, .08);
+}
+
+.experienceBanner::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+
+  background: radial-gradient(
+    ellipse at 75% 12%,
+    rgba(255, 255, 255, .2),
+    transparent 52%
+  );
+
+  pointer-events: none;
+}
+
+.experienceBanner--democracy {
+  background: linear-gradient(
+    115deg,
+    #112952 0%,
+    #254a82 33%,
+    #472a64 62%,
+    #89334b 100%
+  );
+}
+
+.experienceBanner--rutgers {
+  background: linear-gradient(
+    120deg,
+    #4d172b,
+    #8b243f 60%,
+    #42183e
+  );
+}
+
+.experienceBanner--academy {
+  background: linear-gradient(
+    120deg,
+    #15223d,
+    #35446f 60%,
+    #4b285e
+  );
+}
+
+.experienceBanner--makers {
+  background: linear-gradient(
+    115deg,
+    #493022 0%,
+    #805039 42%,
+    #aa7252 75%,
+    #66415b 100%
+  );
+}
+
+.experienceBannerCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Original animated gradient names */
+
+.experienceBannerCopy
+.experienceCompanyGradient {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(19px, 2.4vw, 30px);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+
+  color: transparent;
+
+  background-image: linear-gradient(
+    90deg,
+    #f4f0ff,
+    #d2b8fa,
+    #efa5e6,
+    #c4aaff,
+    #f7f2ff,
+    #d2b8fa
+  );
+
+  background-size: 240% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation:
+    experienceCompanyGradientFlow
+    9s linear infinite;
+}
+
+@keyframes experienceCompanyGradientFlow {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 240% center;
+  }
+}
+
+.experienceBannerCopy small {
+  color: #ded2f0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* ==========================================================
+   CARD CONTENT — ORIGINAL
+   ========================================================== */
+
+.experienceCardContent {
+  position: relative;
+  z-index: 1;
+  padding: 27px 29px 29px;
+}
+
+.experienceCardKicker {
+  display: flex;
+  justify-content: space-between;
+
+  color: #d0abff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.experienceCardContent h3 {
+  margin: 11px 0 9px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(20px, 2.1vw, 29px);
+  color: #f9f5ff;
+  letter-spacing: -.035em;
+  line-height: 1.3;
+}
+
+.experienceCardContent h4 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 650;
+  color: #e5d2ff;
+  line-height: 1.55;
+}
+
+.experienceCardContent p {
+  margin: 0;
+  color: #c3b9d5;
+  font-size: 14px;
+  line-height: 1.82;
+  max-width: 780px;
+}
+
+.experienceCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.experienceTechnologyTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.experienceTechnologyTags span {
+  padding: 8px 11px;
+
+  border: 1px solid rgba(194, 157, 246, .27);
+  border-radius: 999px;
+
+  background: rgba(139, 91, 208, .09);
+
+  color: #e4d6ff;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.experienceMobileDate {
+  display: none;
+}
+
+/* ==========================================================
+   FROSTED GALAXY GLASS — UNCHANGED
+   ========================================================== */
+
+#experience .experienceMagicCard {
+  background: linear-gradient(
+    145deg,
+    rgba(29, 20, 54, .34) 0%,
+    rgba(13, 9, 32, .42) 58%,
+    rgba(20, 13, 41, .36) 100%
+  );
+
+  border: 1px solid rgba(221, 196, 255, .25);
+
+  -webkit-backdrop-filter:
+    blur(22px) saturate(120%);
+  backdrop-filter:
+    blur(22px) saturate(120%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .1),
+    0 14px 40px rgba(5, 3, 20, .19),
+    0 0 0 1px rgba(205, 168, 250, .035);
+}
+
+#experience
+.experienceMagicCard:is(
+  :hover,
+  .isHovered,
+  :focus-visible
+) {
+  border-color: rgba(231, 207, 255, .52);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .13),
+    0 18px 52px rgba(6, 3, 22, .24),
+    0 0 30px rgba(192, 135, 244, .13);
+}
+
+#experience
+.experienceMagicCard
+.experienceCardContent {
+  background: transparent;
+}
+
+#experience
+.experienceMagicCard
+.experienceMagicGlow {
+  background: radial-gradient(
+    360px circle at
+    var(--magic-x, 50%)
+    var(--magic-y, 50%),
+    rgba(201, 158, 255, .17),
+    rgba(189, 130, 248, .06) 43%,
+    transparent 76%
+  );
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 850px) {
+  #experience.experienceSection {
+    scroll-margin-top: 80px;
+    padding-top: 52px;
+  }
+
+  #experience .experienceMagicTimeline::before,
+  #experience .experienceMagicTimeline::after {
+    left: 11px;
+  }
+
+  .experienceTimelineEntry {
+    grid-template-columns:
+      23px minmax(0, 1fr);
+  }
+
+  .experienceTimelineDate {
+    display: none;
+  }
+
+  .experienceTimelineNode {
+    margin-top: 35px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .experienceBanner {
+    padding: 20px;
+    min-height: 128px;
+  }
+
+  .experienceCardContent {
+    padding: 22px;
+  }
+
+  .experienceMobileDate {
+    display: inline;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  #experience.experienceSection h2.experienceMaskedHeading {
+    font-size: clamp(34px, 7.8vw, 46px);
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  #experience .experienceMagicCard {
+    -webkit-backdrop-filter:
+      blur(17px) saturate(115%);
+    backdrop-filter:
+      blur(17px) saturate(115%);
+  }
+}
+
+@media (max-width: 540px) {
+  #experience.experienceSection {
+    scroll-margin-top: 72px;
+    padding-top: 42px;
+    padding-bottom: 85px;
+  }
+
+  #experience .experienceIntro {
+    font-size: 13px;
+    margin: 17px 0 30px;
+  }
+
+  .experienceMagicTimeline {
+    gap: 16px;
+  }
+
+  .experienceBanner {
+    gap: 12px;
+    min-height: 104px;
+    padding: 18px 14px;
+  }
+
+  .experienceBannerCopy
+  .experienceCompanyGradient {
+    font-size: 18px;
+  }
+
+  .experienceBannerCopy small {
+    font-size: 10px;
+  }
+
+  .experienceCardContent {
+    padding: 19px 16px 22px;
+  }
+
+  .experienceCardContent p {
+    font-size: 12.5px;
+  }
+
+  .experienceCardContent h3 {
+    font-size: 20px;
+  }
+
+  .experienceCardContent h4 {
+    font-size: 13px;
+  }
+
+  .experienceCardKicker {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .experienceTechnologyTags span {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .experienceMagicCard {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .experienceMagicStars span {
+    animation: none !important;
+    display: none;
+  }
+
+  .experienceMagicGlow {
+    display: none;
+  }
+
+  .experienceBannerCopy
+  .experienceCompanyGradient {
+    animation: none !important;
+    background-position: 0% center;
+  }
+
+  #experience .experienceMagicTimeline::after {
+    animation: none;
+    transform: scaleY(1);
+  }
+
+  #experience .experienceTimelineNode {
+    transition: none;
+  }
+}

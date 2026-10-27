@@ -1,0 +1,1466 @@
+/* ============================================
+
+   CONTACT SECTION
+
+   Original layout and full-card Spotlight
+
+   ============================================ */
+
+.contactNewSection,
+
+.contactNewSection * {
+
+  box-sizing: border-box;
+
+}
+
+.contactNewSection {
+
+  position: relative;
+
+  z-index: 1;
+
+  width: min(1200px, calc(100% - 64px));
+
+  margin: 0 auto;
+
+  padding: 12px 0 105px;
+
+  color: #f7f1ff;
+
+  background: transparent;
+
+  scroll-margin-top: 88px;
+
+}
+
+/* ============================================
+
+   MAIN HEADING
+
+   ============================================ */
+
+.contactNewIntro {
+
+  max-width: 790px;
+
+  margin: 0 auto 42px;
+
+  text-align: center;
+
+}
+
+.contactNewSection .contactNewHeading {
+
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: clamp(40px, 4.6vw, 65px);
+
+  font-weight: 800;
+
+  letter-spacing: -0.065em;
+
+  line-height: 1.2;
+
+  text-align: center;
+
+  background: none;
+
+  color: #f9f4ff;
+
+  -webkit-text-fill-color: initial;
+
+}
+
+.contactNewSection
+
+.contactNewHeading
+
+.maskWordTexture {
+
+  -webkit-text-fill-color: transparent;
+
+}
+
+.contactNewIntro > p {
+
+  max-width: 680px;
+
+  margin: 14px auto 0;
+
+  color: #d3c7e5;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+}
+
+/* ============================================
+
+   TWO-COLUMN LAYOUT
+
+   ============================================ */
+
+.contactNewGrid {
+
+  display: grid;
+
+  grid-template-columns:
+
+    minmax(0, 0.95fr)
+
+    minmax(0, 1.05fr);
+
+  gap: clamp(35px, 6vw, 90px);
+
+  align-items: start;
+
+}
+
+.contactNewDetails {
+
+  min-width: 0;
+
+  padding: 24px 0 0;
+
+}
+
+.contactNewEyebrow {
+
+  display: block;
+
+  color: #c9a9fa;
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+}
+
+/* ============================================
+
+   ANIMATED GRADIENT MAGIC
+
+   Same as Welcome to my portfolio
+
+   ============================================ */
+
+.contactNewSection .contactNewDetails h3,
+
+.contactNewSection .contactNewFormCard h3 {
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-weight: 800;
+
+  letter-spacing: -0.052em;
+
+  line-height: 1.23;
+
+  color: transparent;
+
+  -webkit-text-fill-color: transparent;
+
+  background-image: linear-gradient(
+
+    105deg,
+
+    #f4f0ff,
+
+    #d2b8fa 20%,
+
+    #efa5e6 40%,
+
+    #c4aaff 60%,
+
+    #f7f2ff 80%,
+
+    #d2b8fa
+
+  );
+
+  background-size: 240% auto;
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  animation: contactNewGradientFlow 9s linear infinite;
+
+}
+
+@keyframes contactNewGradientFlow {
+
+  from {
+
+    background-position: 0% 50%;
+
+  }
+
+  to {
+
+    background-position: 200% 50%;
+
+  }
+
+}
+
+.contactNewSection .contactNewDetails h3 {
+
+  margin: 15px 0;
+
+  font-size: clamp(25px, 2.5vw, 35px);
+
+}
+
+.contactNewSection .contactNewFormCard h3 {
+
+  margin: 10px 0 7px;
+
+  font-size: clamp(25px, 2.4vw, 32px);
+
+}
+
+/* ============================================
+
+   CONTACT INFORMATION
+
+   ============================================ */
+
+.contactNewLead {
+
+  max-width: 440px;
+
+  margin: 0 0 30px;
+
+  color: #c5b9d5;
+
+  font-size: 0.95rem;
+
+  line-height: 1.85;
+
+}
+
+.contactNewItems {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+}
+
+.contactNewItem {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  min-width: 0;
+
+}
+
+/* ============================================
+
+   CONTACT ICONS — NO BOXES
+
+   Only softly glowing symbols
+
+   ============================================ */
+
+.contactNewItemIcon {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 54px;
+
+  height: 54px;
+
+  border: none;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  color: #d7b6ff;
+
+}
+
+.contactNewItemIcon svg {
+
+  display: block;
+
+  filter:
+
+    drop-shadow(0 0 4px rgba(203, 156, 255, 0.65))
+
+    drop-shadow(0 0 10px rgba(167, 95, 240, 0.3));
+
+  transition:
+
+    color 0.25s ease,
+
+    filter 0.25s ease,
+
+    transform 0.25s ease;
+
+}
+
+/* Email — pearl lavender */
+
+.contactNewItem:nth-child(1)
+
+.contactNewItemIcon {
+
+  color: #e0caff;
+
+}
+
+/* Phone — soft pink */
+
+.contactNewItem:nth-child(2)
+
+.contactNewItemIcon {
+
+  color: #f2b8dc;
+
+}
+
+/* Location — icy lilac */
+
+.contactNewItem:nth-child(3)
+
+.contactNewItemIcon {
+
+  color: #b9bcff;
+
+}
+
+.contactNewItem:hover
+
+.contactNewItemIcon svg {
+
+  transform: scale(1.08);
+
+  filter:
+
+    drop-shadow(0 0 6px rgba(220, 179, 255, 0.85))
+
+    drop-shadow(0 0 15px rgba(186, 126, 248, 0.55));
+
+}
+
+.contactNewItemText {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+
+}
+
+.contactNewItemText strong {
+
+  color: #f5ebff;
+
+  font-size: 0.9rem;
+
+}
+
+.contactNewItemText a,
+
+.contactNewItemText span {
+
+  color: #c5b9d5;
+
+  font-size: 0.92rem;
+
+  overflow-wrap: anywhere;
+
+  text-decoration: none;
+
+}
+
+.contactNewItemText a:hover {
+
+  color: #e6d0ff;
+
+}
+
+/* Copy-email icon stays small and accessible */
+
+.contactNewCopy {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 35px;
+
+  height: 35px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #d9b8ff;
+
+  cursor: pointer;
+
+  filter:
+
+    drop-shadow(0 0 5px rgba(184, 125, 247, 0.32));
+
+  transition:
+
+    color 0.25s ease,
+
+    transform 0.25s ease,
+
+    filter 0.25s ease;
+
+}
+
+.contactNewCopy:hover {
+
+  color: #ffffff;
+
+  transform: scale(1.12);
+
+  filter:
+
+    drop-shadow(0 0 7px rgba(210, 162, 255, 0.7));
+
+}
+
+.contactNewCopy:focus-visible {
+
+  outline: 2px solid #d6b2ff;
+
+  outline-offset: 3px;
+
+  border-radius: 4px;
+
+}
+
+/* ============================================
+
+   SOCIAL MEDIA — CLEAN GLOWING ICONS
+
+   NO BACKGROUND BOXES
+
+   ============================================ */
+
+.contactNewSocials {
+
+  margin-top: 44px;
+
+}
+
+.contactNewSocials > strong {
+
+  display: block;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 0.96rem;
+
+  font-weight: 700;
+
+  color: #f2e6ff;
+
+}
+
+/* Three icons in a neat horizontal row */
+
+.contactNewSocialIcons {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 23px;
+
+  margin-top: 17px;
+
+}
+
+/* Remove all box styling */
+
+.contactNewSocialIcons a {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 32px;
+
+  height: 36px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+
+    color 0.25s ease,
+
+    transform 0.25s ease;
+
+}
+
+.contactNewSocialIcons a svg {
+
+  display: block;
+
+  transition:
+
+    transform 0.25s ease,
+
+    filter 0.25s ease;
+
+}
+
+/* LinkedIn — bright lavender */
+
+.contactNewSocialIcons
+
+.contactSocialLinkedin {
+
+  color: #c9b8ff;
+
+}
+
+.contactNewSocialIcons
+
+.contactSocialLinkedin svg {
+
+  filter:
+
+    drop-shadow(0 0 5px rgba(179, 155, 255, 0.6))
+
+    drop-shadow(0 0 11px rgba(150, 113, 255, 0.25));
+
+}
+
+/* Instagram — delicate rose pink */
+
+.contactNewSocialIcons
+
+.contactSocialInstagram {
+
+  color: #f4b3dc;
+
+}
+
+.contactNewSocialIcons
+
+.contactSocialInstagram svg {
+
+  filter:
+
+    drop-shadow(0 0 5px rgba(247, 166, 219, 0.6))
+
+    drop-shadow(0 0 11px rgba(229, 124, 190, 0.25));
+
+}
+
+/* GitHub — pearl white / silver */
+
+.contactNewSocialIcons
+
+.contactSocialGithub {
+
+  color: #ece6ff;
+
+}
+
+.contactNewSocialIcons
+
+.contactSocialGithub svg {
+
+  filter:
+
+    drop-shadow(0 0 5px rgba(223, 204, 255, 0.55))
+
+    drop-shadow(0 0 11px rgba(191, 171, 255, 0.22));
+
+}
+
+/* Cute, very subtle hover */
+
+.contactNewSocialIcons a:hover {
+
+  background: transparent;
+
+  border: none;
+
+  box-shadow: none;
+
+}
+
+.contactNewSocialIcons a:hover svg {
+
+  transform: translateY(-3px) scale(1.08);
+
+  filter:
+
+    drop-shadow(0 0 7px currentColor)
+
+    drop-shadow(0 0 15px currentColor);
+
+}
+
+.contactNewSocialIcons a:focus-visible {
+
+  outline: 2px solid #d6b2ff;
+
+  outline-offset: 5px;
+
+  border-radius: 4px;
+
+}
+
+/* ============================================
+
+   FULL SPOTLIGHT CARD — PRESERVED
+
+   ============================================ */
+
+.contactNewFormCard {
+
+  --contact-x: 50%;
+
+  --contact-y: 30%;
+
+  position: relative;
+
+  isolation: isolate;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  padding: 1px;
+
+  border-radius: 28px;
+
+  background: linear-gradient(
+
+    125deg,
+
+    rgba(224, 197, 255, 0.4),
+
+    rgba(164, 121, 225, 0.14) 45%,
+
+    rgba(210, 181, 255, 0.28)
+
+  );
+
+  box-shadow:
+
+    0 22px 65px rgba(4, 2, 17, 0.24);
+
+  transition:
+
+    box-shadow 0.35s ease,
+
+    transform 0.35s ease;
+
+}
+
+/* Border spotlight */
+
+.contactNewFormCard::before {
+
+  content: "";
+
+  position: absolute;
+
+  z-index: 0;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+
+    460px circle at
+
+      var(--contact-x)
+
+      var(--contact-y),
+
+    rgba(215, 179, 255, 0.95) 0%,
+
+    rgba(191, 137, 255, 0.65) 18%,
+
+    rgba(157, 105, 243, 0.28) 38%,
+
+    transparent 75%
+
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+
+}
+
+.contactNewFormCard:hover::before,
+
+.contactNewFormCard:focus-within::before {
+
+  opacity: 1;
+
+}
+
+.contactNewFormCard:hover,
+
+.contactNewFormCard:focus-within {
+
+  box-shadow:
+
+    0 25px 75px rgba(4, 2, 17, 0.32),
+
+    0 0 35px rgba(177, 124, 255, 0.15);
+
+}
+
+/* ============================================
+
+   INNER FORM CONTENT
+
+   Preserve full-surface spotlight
+
+   ============================================ */
+
+.contactNewFormContent {
+
+  position: relative;
+
+  z-index: 1;
+
+  isolation: isolate;
+
+  overflow: hidden;
+
+  padding: clamp(24px, 3vw, 39px);
+
+  border-radius: 27px;
+
+  background: rgba(18, 12, 32, 0.91);
+
+  backdrop-filter: blur(19px);
+
+  -webkit-backdrop-filter: blur(19px);
+
+}
+
+.contactNewFormContent::before {
+
+  content: "";
+
+  position: absolute;
+
+  z-index: 0;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  border-radius: inherit;
+
+  background: radial-gradient(
+
+    430px circle at
+
+      calc(var(--contact-x) - 1px)
+
+      calc(var(--contact-y) - 1px),
+
+    rgba(184, 133, 255, 0.28) 0%,
+
+    rgba(152, 94, 243, 0.15) 30%,
+
+    rgba(121, 77, 211, 0.07) 52%,
+
+    transparent 77%
+
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+}
+
+.contactNewFormCard:hover
+
+.contactNewFormContent::before,
+
+.contactNewFormCard:focus-within
+
+.contactNewFormContent::before {
+
+  opacity: 1;
+
+}
+
+.contactNewFormContent > * {
+
+  position: relative;
+
+  z-index: 1;
+
+}
+
+.contactNewFormContent > p {
+
+  margin: 0 0 24px;
+
+  color: #c7b9d8;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+
+}
+
+/* ============================================
+
+   FORM FIELDS
+
+   ============================================ */
+
+.contactNewForm {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+.contactNewForm label {
+
+  margin: 5px 0 0;
+
+  color: #efe6fa;
+
+  font-size: 0.84rem;
+
+  font-weight: 700;
+
+}
+
+.contactNewForm input,
+
+.contactNewForm textarea {
+
+  display: block;
+
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 14px 16px;
+
+  border: 1px solid rgba(202, 177, 237, 0.22);
+
+  border-radius: 13px;
+
+  background: rgba(8, 6, 21, 0.62);
+
+  color: #f7efff;
+
+  outline: none;
+
+  font: inherit;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+  transition:
+
+    border-color 0.2s ease,
+
+    box-shadow 0.2s ease,
+
+    background 0.2s ease;
+
+}
+
+.contactNewForm textarea {
+
+  resize: vertical;
+
+  min-height: 126px;
+
+}
+
+.contactNewForm input::placeholder,
+
+.contactNewForm textarea::placeholder {
+
+  color: #9385a9;
+
+}
+
+.contactNewForm input:focus,
+
+.contactNewForm textarea:focus {
+
+  border-color: #bc97f6;
+
+  background: rgba(17, 9, 38, 0.72);
+
+  box-shadow:
+
+    0 0 0 3px rgba(183, 140, 242, 0.14);
+
+}
+
+/* ============================================
+
+   SEND BUTTON
+
+   ============================================ */
+
+.contactNewSubmit {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  min-height: 53px;
+
+  margin-top: 12px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+
+    105deg,
+
+    #f5e8ff,
+
+    #c9a7ff,
+
+    #e3cbff
+
+  );
+
+  color: #21152f;
+
+  font: inherit;
+
+  font-size: 0.94rem;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+
+    filter 0.25s ease,
+
+    transform 0.25s ease,
+
+    box-shadow 0.25s ease;
+
+}
+
+.contactNewSubmit:hover {
+
+  transform: translateY(-2px);
+
+  filter: brightness(1.06);
+
+  box-shadow:
+
+    0 9px 25px rgba(155, 101, 225, 0.23);
+
+}
+
+.contactNewForm .contactNewFormNote {
+
+  margin: 4px 0 0;
+
+  color: #a99abc;
+
+  text-align: center;
+
+  font-size: 0.72rem;
+
+  line-height: 1.6;
+
+}
+
+/* ============================================
+
+   RESPONSIVE
+
+   ============================================ */
+
+@media (max-width: 800px) {
+
+  .contactNewGrid {
+
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+  }
+
+  .contactNewDetails {
+
+    padding-top: 0;
+
+  }
+
+  .contactNewLead {
+
+    max-width: none;
+
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .contactNewSection {
+
+    width: calc(100% - 36px);
+
+    padding: 34px 0 85px;
+
+  }
+
+  .contactNewIntro {
+
+    margin-bottom: 35px;
+
+  }
+
+  .contactNewSection .contactNewHeading {
+
+    font-size: clamp(36px, 9vw, 48px);
+
+  }
+
+  .contactNewIntro > p {
+
+    font-size: 0.9rem;
+
+  }
+
+  .contactNewFormContent {
+
+    padding: 23px 19px;
+
+  }
+
+  .contactNewItemIcon {
+
+    width: 47px;
+
+    height: 47px;
+
+  }
+
+  .contactNewSocialIcons {
+
+    gap: 21px;
+
+  }
+
+}
+
+/* ============================================
+
+   ACCESSIBILITY
+
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contactNewSection *,
+
+  .contactNewFormCard::before,
+
+  .contactNewFormContent::before {
+
+    animation: none !important;
+
+    transition: none !important;
+
+  }
+
+  .contactNewSection .maskWordReveal {
+
+    opacity: 1 !important;
+
+    transform: none !important;
+
+  }
+
+  .contactNewSocialIcons a:hover svg,
+
+  .contactNewItem:hover .contactNewItemIcon svg {
+
+    transform: none;
+
+  }
+
+}
+
+#Contacts.sbnew-section {
+
+  scroll-margin-top: 110px !important;
+
+}
+
+/* Center only the Send a Message heading.
+
+   The gradient, background clipping, and animation above remain unchanged. */
+
+#contact .contactNewFormCard .contactNewFormContent > h3 {
+
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+
+}
+
+/* ==========================================================
+
+   COMPACT CONTACT CARD — preserve gradient and spotlight
+
+   ========================================================== */
+
+#contact .contactNewFormCard {
+
+  width: 100%;
+
+  max-width: 490px;
+
+  justify-self: center;
+
+  border-radius: 24px;
+
+}
+
+#contact .contactNewFormContent {
+
+  padding: 25px 27px 28px;
+
+  border-radius: 23px;
+
+}
+
+#contact .contactNewFormCard .contactNewFormContent > h3 {
+
+  margin: 2px 0 19px;
+
+  width: 100%;
+
+  text-align: center;
+
+  font-size: clamp(24px, 2.2vw, 29px);
+
+}
+
+#contact .contactNewForm {
+
+  gap: 8px;
+
+}
+
+#contact .contactNewForm label {
+
+  margin-top: 3px;
+
+}
+
+#contact .contactNewForm input,
+
+#contact .contactNewForm textarea {
+
+  padding: 11px 14px;
+
+}
+
+#contact .contactNewForm textarea {
+
+  min-height: 95px;
+
+}
+
+#contact .contactNewSubmit {
+
+  min-height: 48px;
+
+  margin-top: 9px;
+
+}
+
+@media (max-width: 600px) {
+
+  #contact .contactNewFormCard {
+
+    max-width: 100%;
+
+  }
+
+  #contact .contactNewFormContent {
+
+    padding: 22px 19px 24px;
+
+  }
+
+}
+
+/* ================================================================
+   INTEGRATED LAVENDER GLASS — no extra ContactGlassFix.css needed.
+   Maintain original spotlight, spacing, layout and theme animation.
+   ================================================================ */
+#contact .contactNewFormCard {
+  border: 1px solid rgba(221, 196, 255, 0.35);
+  padding: 1px;
+  background: linear-gradient(135deg,
+    rgba(243, 224, 255, 0.32),
+    rgba(194, 149, 250, 0.12) 42%,
+    rgba(236, 207, 255, 0.26));
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+  backdrop-filter: blur(18px) saturate(145%);
+  box-shadow:
+    0 24px 65px rgba(9, 4, 29, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    0 0 32px rgba(191, 149, 255, 0.12);
+}
+
+#contact .contactNewFormCard .contactNewFormContent {
+  /* The old .91 alpha was effectively solid and hid the nebula. */
+  background: linear-gradient(145deg,
+    rgba(56, 32, 87, 0.48),
+    rgba(24, 15, 51, 0.43) 58%,
+    rgba(54, 29, 82, 0.48));
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
+  backdrop-filter: blur(20px) saturate(135%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+
+/* Diffuse light catches along the top edge, behind the actual form. */
+#contact .contactNewFormCard .contactNewFormContent::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(155deg,
+    rgba(255, 239, 255, 0.11),
+    rgba(235, 202, 255, 0.025) 35%,
+    transparent 72%);
+}
+
+#contact .contactNewForm input,
+#contact .contactNewForm textarea {
+  border-color: rgba(230, 209, 255, 0.27);
+  background: rgba(15, 9, 35, 0.34);
+  color: #f9f3ff;
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+#contact .contactNewForm input:focus,
+#contact .contactNewForm textarea:focus {
+  border-color: rgba(218, 181, 255, 0.8);
+  background: rgba(25, 14, 51, 0.49);
+  box-shadow: 0 0 0 3px rgba(190, 142, 255, 0.14);
+}
+
+#contact .contactNewFormCard:hover,
+#contact .contactNewFormCard:focus-within {
+  box-shadow:
+    0 27px 72px rgba(9, 4, 29, 0.3),
+    0 0 38px rgba(185, 133, 255, 0.19);
+}
+
+/* ============================================================
+   CONTACT — MATCH THE EXISTING EDUCATION MAGIC BENTO CARD
+   Uses the same frosted glass, pointer glow and gentle 3D tilt.
+   Keep inputs and the Send button fully interactive.
+   ============================================================ */
+#contact .contactNewFormCard.contactMagicBento {
+  --contact-rotate-x: 0deg;
+  --contact-rotate-y: 0deg;
+  --contact-x: 50%;
+  --contact-y: 50%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid rgba(221, 196, 255, 0.25);
+  border-radius: 25px;
+  background: linear-gradient(145deg,
+    rgba(29, 20, 54, 0.34) 0%,
+    rgba(13, 9, 32, 0.42) 58%,
+    rgba(20, 13, 41, 0.36) 100%);
+  -webkit-backdrop-filter: blur(22px) saturate(120%);
+  backdrop-filter: blur(22px) saturate(120%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 14px 40px rgba(5, 3, 20, 0.19),
+    0 0 0 1px rgba(205, 168, 250, 0.035);
+  transform: perspective(1100px)
+    rotateX(var(--contact-rotate-x))
+    rotateY(var(--contact-rotate-y));
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Same Education hover border and shadow. */
+#contact .contactNewFormCard.contactMagicBento:hover,
+#contact .contactNewFormCard.contactMagicBento:focus-within {
+  border-color: rgba(231, 207, 255, 0.52);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    0 18px 52px rgba(6, 3, 22, 0.24),
+    0 0 30px rgba(192, 135, 244, 0.13);
+}
+
+/* Education-style cursor-following purple glow. */
+#contact .contactNewFormCard.contactMagicBento::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(360px circle at
+    var(--contact-x, 50%) var(--contact-y, 50%),
+    rgba(201, 158, 255, 0.17),
+    rgba(189, 130, 248, 0.06) 43%,
+    transparent 76%);
+  transition: opacity 0.28s ease;
+}
+#contact .contactNewFormCard.contactMagicBento:hover::before,
+#contact .contactNewFormCard.contactMagicBento:focus-within::before {
+  opacity: 1;
+}
+
+/* Small twinkling highlights, as on the Education Magic Bento cards. */
+#contact .contactNewFormCard.contactMagicBento::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 15% 12%, rgba(245, 231, 255, 0.9) 98%, transparent),
+    radial-gradient(1.5px 1.5px at 87% 18%, rgba(245, 231, 255, 0.82) 98%, transparent),
+    radial-gradient(1.5px 1.5px at 92% 86%, rgba(245, 231, 255, 0.7) 98%, transparent);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+#contact .contactNewFormCard.contactMagicBento:hover::after { opacity: 0.65; }
+
+/* Do not put an opaque purple panel over the Education glass finish.
+   Unlike Education's display-only card, the form must accept clicks. */
+#contact .contactNewFormCard.contactMagicBento .contactNewFormContent {
+  position: relative;
+  z-index: 2;
+  border-radius: 24px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+#contact .contactNewFormCard.contactMagicBento .contactNewFormContent::before {
+  background: none;
+  opacity: 0;
+}
+#contact .contactNewFormCard.contactMagicBento .contactNewForm input,
+#contact .contactNewFormCard.contactMagicBento .contactNewForm textarea {
+  background: rgba(9, 7, 21, 0.54);
+  border-color: rgba(213, 191, 239, 0.23);
+}
+#contact .contactNewFormCard.contactMagicBento .contactNewForm input:focus,
+#contact .contactNewFormCard.contactMagicBento .contactNewForm textarea:focus {
+  background: rgba(14, 9, 30, 0.67);
+  border-color: rgba(218, 181, 255, 0.8);
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  #contact .contactNewFormCard.contactMagicBento {
+    transform: none !important;
+    will-change: auto;
+  }
+  #contact .contactNewFormCard.contactMagicBento::after {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #contact .contactNewFormCard.contactMagicBento,
+  #contact .contactNewFormCard.contactMagicBento::before,
+  #contact .contactNewFormCard.contactMagicBento::after {
+    transition: none !important;
+  }
+}
