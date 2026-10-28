@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./LogoLoop.css";
 
@@ -15,7 +16,7 @@ const TECHNOLOGIES = [
   { name: "PyTorch", path: "pytorch/pytorch-original.svg" },
   { name: "OpenCV", path: "opencv/opencv-original.svg" },
   { name: "Docker", path: "docker/docker-original.svg" },
-  { name: "Amazon Web Services", path: "amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "Amazon Web Services", path: "/icons/aws.svg" },
   { name: "PostgreSQL", path: "postgresql/postgresql-original.svg" },
   { name: "MongoDB", path: "mongodb/mongodb-original.svg" },
   { name: "Git", path: "git/git-original.svg" },
@@ -28,7 +29,7 @@ function LogoItem({ item }) {
   return (
     <div className="techLoopItem" title={item.name}>
       <img
-        src={`${ICON_ROOT}/${item.path}`}
+        src={item.path.startsWith("/") ? item.path : `${ICON_ROOT}/${item.path}`}
         alt=""
         width="52"
         height="52"

@@ -571,7 +571,7 @@ import "./MobileOptimizations.css";
 
    { name: "Kubernetes", group: "Cloud & DevOps", icon: "kubernetes/kubernetes-original.svg" },
 
-   { name: "AWS", group: "Cloud & DevOps", icon: "amazonwebservices/amazonwebservices-original-wordmark.svg" },
+   { name: "AWS", group: "Cloud & DevOps", icon: "/icons/aws.svg" },
 
    { name: "GCP", group: "Cloud & DevOps", icon: "googlecloud/googlecloud-original.svg" },
 
