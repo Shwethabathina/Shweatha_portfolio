@@ -54,39 +54,16 @@ function EducationMagicCard({
 }) {
   const ref = useRef(null);
   const [stars, setStars] = useState([]);
-  const [canAnimate, setCanAnimate] = useState(false);
-
-  useEffect(() => {
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
-
-    const precisePointer = window.matchMedia(
-      "(hover: hover) and (pointer: fine)"
-    );
-
-    const update = () =>
-      setCanAnimate(
-        !reduced.matches && precisePointer.matches
-      );
-
-    update();
-
-    reduced.addEventListener?.("change", update);
-    precisePointer.addEventListener?.("change", update);
-
-    return () => {
-      reduced.removeEventListener?.("change", update);
-      precisePointer.removeEventListener?.("change", update);
-    };
-  }, []);
-
   function handleMove(event) {
     const card = ref.current;
 
-    if (!card || !canAnimate) return;
+    if (!card) return;
+    if (event.pointerType === "touch") return;
+
 
     const bounds = card.getBoundingClientRect();
+
+    if (!bounds.width || !bounds.height) return;
 
     const x = event.clientX - bounds.left;
     const y = event.clientY - bounds.top;
@@ -118,8 +95,9 @@ function EducationMagicCard({
     );
   }
 
-  function handleEnter() {
-    if (!canAnimate || !enableStars) return;
+  function handleEnter(event) {
+    if (event?.pointerType === "touch") return;
+    if (!enableStars) return;
 
     setStars(
       Array.from({ length: 12 }, (_, i) => ({
@@ -153,9 +131,9 @@ function EducationMagicCard({
     <div
       ref={ref}
       className="educationTimelineCard educationMagicCard"
-      onMouseMove={handleMove}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
+      onPointerMove={handleMove}
+      onPointerEnter={handleEnter}
+      onPointerLeave={handleLeave}
       onFocus={handleEnter}
       onBlur={handleLeave}
       tabIndex={0}

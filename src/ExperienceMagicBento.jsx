@@ -62,32 +62,9 @@ function ExperienceCard({
   const cardRef = useRef(null);
   const [stars, setStars] = useState([]);
   const [active, setActive] = useState(false);
-  const [motionAllowed, setMotionAllowed] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const hover = window.matchMedia("(hover: hover) and (pointer: fine)");
-
-    const refresh = () => {
-      setMotionAllowed(!media.matches && hover.matches);
-    };
-
-    refresh();
-
-    media.addEventListener?.("change", refresh);
-    hover.addEventListener?.("change", refresh);
-
-    return () => {
-      media.removeEventListener?.("change", refresh);
-      hover.removeEventListener?.("change", refresh);
-    };
-  }, []);
-
-  const handleMove = (event) => {
+const handleMove = (event) => {
     const card = cardRef.current;
-    if (!card || !motionAllowed) return;
+    if (!card || event.pointerType === "touch") return;
 
     const rect = card.getBoundingClientRect();
 
@@ -121,10 +98,11 @@ function ExperienceCard({
     );
   };
 
-  const handleEnter = () => {
+  const handleEnter = (event) => {
+    if (event.pointerType === "touch") return;
     setActive(true);
 
-    if (!motionAllowed || !enableStars) return;
+    if (!enableStars) return;
 
     const particles = Array.from({ length: 12 }, (_, i) => ({
       id: i,
@@ -169,9 +147,9 @@ function ExperienceCard({
       <article
         ref={cardRef}
         className={`experienceMagicCard ${active ? "isHovered" : ""}`}
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
-        onMouseMove={handleMove}
+        onPointerEnter={handleEnter}
+        onPointerLeave={handleLeave}
+        onPointerMove={handleMove}
         onFocus={handleEnter}
         onBlur={handleLeave}
         tabIndex={0}
