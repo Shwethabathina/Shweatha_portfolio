@@ -1980,3 +1980,4 @@ import "./MobileOptimizations.css";
  }
 
  createRoot(document.getElementById("root")).render(<App />);
+
