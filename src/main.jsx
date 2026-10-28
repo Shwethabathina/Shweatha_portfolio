@@ -667,7 +667,7 @@ import "./MobileOptimizations.css";
 
            {skill.icon ? (
 
-             <img src={`${SKILL_ICON_ROOT}/${skill.icon}`} alt="" loading="lazy" />
+             <img src={skill.icon.startsWith("/") ? skill.icon : `${SKILL_ICON_ROOT}/${skill.icon}`} alt="" loading="lazy" />
 
            ) : (
 
@@ -1980,4 +1980,3 @@ import "./MobileOptimizations.css";
  }
 
  createRoot(document.getElementById("root")).render(<App />);
-
