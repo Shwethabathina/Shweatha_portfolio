@@ -5380,18 +5380,38 @@ section.hero#home {
   }
 }
 
-/* Justify portfolio descriptions without changing section headings */
-.site p,
-.experienceMagicCard p,
-.educationTimelineCard p,
-.contactNewSection p,
-.projectCard p {
-  text-align: justify;
+/* ============================================================
+   TEXT ALIGNMENT — SINGLE FINAL BLOCK
+   Keep headings and controls in their existing positions.
+   ============================================================ */
+
+/* Wide About paragraphs: justified without automatic hyphenation. */
+.aboutShowcase .aboutNarrative p {
+  text-align: justify !important;
+  text-align-last: left !important;
   text-justify: inter-word;
-  hyphens: auto;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  white-space: normal;
 }
 
-/* Center the Tech Stack closing tagline */
+/* ABOUT — centered Magic Bento descriptions */
+.aboutShowcase .aboutExpertiseGrid .aboutExpertiseCard p {
+  text-align: center !important;
+  text-align-last: center !important;
+
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+
+  word-spacing: normal !important;
+  letter-spacing: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* Keep the Skills footnote centered under the logo loop. */
 .techLoopFootnote {
   width: 100%;
   text-align: center !important;
@@ -5399,14 +5419,37 @@ section.hero#home {
   margin-right: auto;
 }
 
-/* ABOUT ME — clean justified paragraphs */
-.aboutShowcase .aboutNarrative p {
-  text-align: justify !important;
-  text-justify: inter-word;
+/* ABOUT ME — CENTER ALL MAGIC BENTO CARD CONTENT */
+
+/* Center icons, titles, and descriptions */
+.aboutShowcase .aboutExpertiseCard .border-glow-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* Center the symbols */
+.aboutShowcase .aboutExpertiseCard .aboutExpertiseIcon {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Center the card titles */
+.aboutShowcase .aboutExpertiseCard h3 {
+  width: 100%;
+  text-align: center !important;
+  text-align-last: center !important;
+}
+
+/* Center the descriptions */
+.aboutShowcase .aboutExpertiseCard p {
+  width: 100%;
+  text-align: center !important;
+  text-align-last: center !important;
   hyphens: none !important;
   -webkit-hyphens: none !important;
+  word-spacing: normal !important;
   word-break: normal !important;
-  overflow-wrap: normal !important;
-  white-space: normal;
-  letter-spacing: normal;
 }

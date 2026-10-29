@@ -106,6 +106,7 @@ function MaskedContactHeading() {
 
 export default function ContactSection() {
   const spotlightRef = useRef(null);
+  const [magicStars, setMagicStars] = useState([]);
 
   const [form, setForm] = useState({
     name: "",
@@ -118,43 +119,47 @@ export default function ContactSection() {
   const [submitStatus, setSubmitStatus] = useState("");
   const [submitError, setSubmitError] = useState(false);
 
-  /* Spotlight follows mouse */
-
+  /* Full Magic Bento effect on the existing message form card. */
   function handleSpotlight(event) {
-    if (
-      !spotlightRef.current ||
-      event.pointerType === "touch"
-    ) {
-      return;
-    }
-
-    const rect =
-      spotlightRef.current.getBoundingClientRect();
-
-    spotlightRef.current.style.setProperty(
-      "--contact-x",
-      `${event.clientX - rect.left}px`
-    );
-
-    spotlightRef.current.style.setProperty(
-      "--contact-y",
-      `${event.clientY - rect.top}px`
-    );
-
-    // Magic Bento-style gentle 3D tilt, using the existing spotlight coordinates.
-    // Disable motion when visitors request reduced motion.
+    const card = spotlightRef.current;
+    if (!card || event.pointerType === "touch") return;
+    const rect = card.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const nx = (x / rect.width - 0.5) * 2;
+    const ny = (y / rect.height - 0.5) * 2;
+    card.style.setProperty("--contact-x", `${x}px`);
+    card.style.setProperty("--contact-y", `${y}px`);
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const relativeX = (event.clientX - rect.left) / rect.width - 0.5;
-      const relativeY = (event.clientY - rect.top) / rect.height - 0.5;
-      spotlightRef.current.style.setProperty("--contact-rotate-x", `${-relativeY * 3}deg`);
-      spotlightRef.current.style.setProperty("--contact-rotate-y", `${relativeX * 3}deg`);
+      card.style.setProperty("--contact-rotate-x", `${-ny * 5}deg`);
+      card.style.setProperty("--contact-rotate-y", `${nx * 5}deg`);
+      card.style.setProperty("--contact-move-x", `${nx * 5}px`);
+      card.style.setProperty("--contact-move-y", `${ny * 5}px`);
     }
   }
 
+  function startMagic(event) {
+    if (event.pointerType === "touch" ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    setMagicStars(Array.from({ length: 12 }, (_, i) => ({
+      id: i,
+      x: ((i * 67 + 17) % 91) + 4,
+      y: ((i * 43 + 11) % 84) + 8,
+      delay: (i * 0.13) % 1.5,
+      duration: 1.9 + (i % 5) * 0.37,
+      size: 2 + (i % 3),
+    })));
+  }
+
   function resetSpotlight() {
-    if (!spotlightRef.current) return;
-    spotlightRef.current.style.setProperty("--contact-rotate-x", "0deg");
-    spotlightRef.current.style.setProperty("--contact-rotate-y", "0deg");
+    setMagicStars([]);
+    const card = spotlightRef.current;
+    if (!card) return;
+    ["--contact-rotate-x", "--contact-rotate-y",
+      "--contact-move-x", "--contact-move-y"].forEach(key => {
+      card.style.removeProperty(key);
+    });
   }
 
   /* Copy email */
@@ -382,9 +387,20 @@ export default function ContactSection() {
         <div
           ref={spotlightRef}
           onPointerMove={handleSpotlight}
+          onPointerEnter={startMagic}
           onPointerLeave={resetSpotlight}
           className="contactNewFormCard contactMagicBento"
         >
+          <div className="contactMagicStars" aria-hidden="true">
+            {magicStars.map(star => (
+              <span key={star.id} style={{
+                left: `${star.x}%`, top: `${star.y}%`,
+                width: star.size, height: star.size,
+                animationDelay: `${star.delay}s`,
+                animationDuration: `${star.duration}s`,
+              }} />
+            ))}
+          </div>
           <div className="contactNewFormContent">
             <h3>Send a Message</h3>
 
