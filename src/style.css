@@ -5379,3 +5379,34 @@ section.hero#home {
     scroll-margin-top: 45px;
   }
 }
+
+/* Justify portfolio descriptions without changing section headings */
+.site p,
+.experienceMagicCard p,
+.educationTimelineCard p,
+.contactNewSection p,
+.projectCard p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+/* Center the Tech Stack closing tagline */
+.techLoopFootnote {
+  width: 100%;
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ABOUT ME — clean justified paragraphs */
+.aboutShowcase .aboutNarrative p {
+  text-align: justify !important;
+  text-justify: inter-word;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  white-space: normal;
+  letter-spacing: normal;
+}
