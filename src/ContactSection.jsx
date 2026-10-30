@@ -173,7 +173,7 @@ export default function ContactSection() {
     }
   }
 
-  /* Submit directly to FormSubmit without opening an email application. */
+  /* Submit portfolio inquiries to the configured Formspree form. */
   async function sendMessage(event) {
     event.preventDefault();
     if (sending) return;
@@ -188,32 +188,29 @@ export default function ContactSection() {
     setSubmitStatus("");
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+      const response = await fetch("https://formspree.io/f/xrppaljo", {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
         body: new URLSearchParams({
           name,
           email: from,
           message,
           _subject: `Portfolio inquiry from ${name}`,
-          _template: "table",
-          _honey: "",
         }),
       });
 
-      // FormSubmit may return HTTP 200 even when a form is not activated.
-      // Its `success` field can be either a boolean or a string.
-      const result = await response.json();
-      if (!response.ok || String(result?.success).toLowerCase() !== "true") {
-        const providerMessage = String(result?.message || "").trim();
-        const requiresActivation = /activat|confirm|verif/i.test(providerMessage);
-        throw new Error(
-          requiresActivation
-            ? "The contact form is awaiting email activation. Please try again later."
-            : providerMessage || "The message was not accepted by the email service."
-        );
+      // Formspree returns a successful HTTP status when it accepts a submission.
+      if (!response.ok) {
+        let details = "";
+        try {
+          const result = await response.json();
+          details = Array.isArray(result?.errors)
+            ? result.errors.map((item) => item.message).filter(Boolean).join(" ")
+            : String(result?.error || result?.message || "").trim();
+        } catch {
+          // Preserve a useful fallback when an error response is not JSON.
+        }
+        throw new Error(details || "The message could not be submitted. Please try again.");
       }
 
       setForm({ name: "", email: "", message: "" });
@@ -223,7 +220,7 @@ export default function ContactSection() {
       setSubmitError(true);
       setSubmitStatus(
         error instanceof TypeError
-          ? "Unable to connect to the email service. Check your connection and try again."
+          ? "Unable to connect to the email service. Please try again later."
           : error.message || "Message could not be sent. Please try again."
       );
     } finally {
