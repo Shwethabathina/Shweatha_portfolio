@@ -191,10 +191,9 @@ export default function ContactSection() {
       const response = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
+        body: new URLSearchParams({
           name,
           email: from,
           message,
